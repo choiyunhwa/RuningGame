@@ -11,7 +11,7 @@ public enum EItemType
 [CreateAssetMenu(fileName = "Item", menuName = "Item",  order = 0)]
 public class ItemDataSO : ScriptableObject
 {
-    public int score = 0;
+    public int value = 0;
     public EItemType type;
     public GameObject itemPrefab;
 }

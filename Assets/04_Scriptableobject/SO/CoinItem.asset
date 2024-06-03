@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85b9a3ed227462649ac06299b50782a1, type: 3}
-  m_Name: SpeedUpItem
+  m_Name: CoinItem
   m_EditorClassIdentifier: 
-  score: 0
-  type: 0
+  score: 2
+  type: 1
   itemPrefab: {fileID: 0}
