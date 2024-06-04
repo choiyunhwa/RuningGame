@@ -5,7 +5,16 @@ using UnityEngine.UI;
 public class ButtonControl : MonoBehaviour
 {
     public GameObject settingPanel;
-
+    public GameObject EndingPanel;
+    
+    void Start(){
+        settingPanel.SetActive(false);
+        EndingPanel.SetActive(false);
+    }
+    
+    public void OpenEndingPanel(){
+        EndingPanel.SetActive(true);
+    }
     public void OpenSetting(){
         settingPanel.SetActive(!settingPanel.activeInHierarchy);
     }

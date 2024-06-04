@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -24,6 +26,9 @@ public class GameManager : MonoBehaviour
     }
     public DataManager dataManager;
     
+    public void StarGame(){
+        SceneManager.LoadScene("CHScene");
+    }
     private void OnApplicationQuit() {
         dataManager.SaveGameData();
     }
