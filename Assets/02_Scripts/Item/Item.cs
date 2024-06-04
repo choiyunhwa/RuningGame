@@ -14,7 +14,7 @@ public class Item : MonoBehaviour, IInteraction
     public void GetItemEffect()
     {
         ItemEffect();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     public virtual void ItemEffect(){}
@@ -22,9 +22,11 @@ public class Item : MonoBehaviour, IInteraction
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Ãæµ¹!");
         if (((1 << other.gameObject.layer) & layerMask) != 0)
         {
             GetItemEffect();
+            
         }
     }
 }
