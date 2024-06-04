@@ -1,14 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class DataManager : MonoBehaviour
+public class DataManager_CH : MonoBehaviour
 {
     string FileName = "GameData.json";
     public Data data; 
     void Start(){
-        GameManager.Instance.dataManager = this;
+        GameManager_CH.Instance.dataManager = this;
     }
     public void LoadGameData(){
         string filePath = Application.persistentDataPath + "/" + FileName;
@@ -31,5 +32,14 @@ public class DataManager : MonoBehaviour
         File.WriteAllText(filePath,ToJsonData);
 
         Debug.Log("저장완료");
+    }
+
+    internal void ExpCondition(int monsterLevel)
+    {
+        data.exp += monsterLevel;
+        if (data.exp > data.maxExp[data.level])
+        {
+            data.level++;
+        }
     }
 }

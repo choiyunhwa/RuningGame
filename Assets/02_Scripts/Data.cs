@@ -1,12 +1,13 @@
 using System;
 
 [Serializable]
-public class Data {
+public class Data{
     //PlayerData
-    int atk;
-    int def;
-    int level;
-    
-    //Score
-    float highScore;
+    public int atk;
+    public int def;
+    public int level;
+    public int[] maxExp = {10,20,30,40,50};//5레벨까지 있다고 생각.
+    public float exp;
+    //stage
+    public bool[] stages;
 }

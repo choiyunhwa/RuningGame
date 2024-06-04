@@ -523,6 +523,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataManager: {fileID: 0}
+  buttonControl: {fileID: 0}
+  isStart: 0
 --- !u!4 &1459453485
 Transform:
   m_ObjectHideFlags: 0
@@ -550,6 +552,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5e5ddf738fc2847bd71938050c8e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    atk: 0
+    def: 0
+    level: 0
+    maxExp: 0a000000140000001e0000002800000032000000
+    exp: 0
+    stages: 
 --- !u!82 &1459453488
 AudioSource:
   m_ObjectHideFlags: 0
@@ -730,7 +739,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1459453484}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StarGame
+        m_MethodName: Lobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

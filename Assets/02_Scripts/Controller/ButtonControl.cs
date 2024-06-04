@@ -4,19 +4,14 @@ using UnityEngine.UI;
 
 public class ButtonControl : MonoBehaviour
 {
-    public GameObject settingPanel;
     public GameObject EndingPanel;
     
     void Start(){
-        settingPanel.SetActive(false);
+        
         EndingPanel.SetActive(false);
     }
-    
     public void OpenEndingPanel(){
         EndingPanel.SetActive(true);
-    }
-    public void OpenSetting(){
-        settingPanel.SetActive(!settingPanel.activeInHierarchy);
     }
 
     public void PlayAndStop(Text text){
@@ -27,10 +22,7 @@ public class ButtonControl : MonoBehaviour
 
         text.text = Time.timeScale > 0 ? "일시정지" : "재생";
     }
-    public void GameStart(){
-        SceneManager.LoadScene("CHScene");
-    }
-    public void Main(){
-        SceneManager.LoadScene("IntroScene");
+    public void Lobby(){
+        SceneManager.LoadScene("CHLobby");
     }
 }
