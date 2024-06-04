@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonControl : MonoBehaviour
@@ -10,6 +9,7 @@ public class ButtonControl : MonoBehaviour
     public void OpenSetting(){
         settingPanel.SetActive(!settingPanel.activeInHierarchy);
     }
+
     public void PlayAndStop(Text text){
         if(Time.timeScale>0)
             Time.timeScale=0;
@@ -17,5 +17,11 @@ public class ButtonControl : MonoBehaviour
             Time.timeScale=1;
 
         text.text = Time.timeScale > 0 ? "일시정지" : "재생";
+    }
+    public void GameStart(){
+        SceneManager.LoadScene("CHScene");
+    }
+    public void Main(){
+        SceneManager.LoadScene("IntroScene");
     }
 }

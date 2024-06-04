@@ -12,7 +12,6 @@ public class AudioControl : MonoBehaviour
     public void SetSlider(Slider sldier)
     {
         audioSlider = sldier;
-
     }
     public void SoundControl()
     {
@@ -26,8 +25,6 @@ public class AudioControl : MonoBehaviour
         {
             audioMixer.SetFloat(audioSlider.name, sound);
         }
-
-        Debug.Log(audioSlider);
     }
 
 }

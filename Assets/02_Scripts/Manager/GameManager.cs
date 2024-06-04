@@ -22,10 +22,9 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    public DataManager dataManager;
+    
+    private void OnApplicationQuit() {
+        dataManager.SaveGameData();
     }
 }
