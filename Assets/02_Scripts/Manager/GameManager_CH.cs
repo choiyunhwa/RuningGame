@@ -66,6 +66,7 @@ public class GameManager_CH : MonoBehaviour
         buttonControl.OpenEndingPanel();
         Time.timeScale=0;
         isStart=false;
+        dataManager.data.stages[stageData.stageNum-1] = true;
         //스테이지를 받아와서 Data에 클리어 했다고 표시 해준다.
     }
 

@@ -525,6 +525,7 @@ MonoBehaviour:
   dataManager: {fileID: 0}
   buttonControl: {fileID: 0}
   isStart: 0
+  stageData: {fileID: 0}
 --- !u!4 &1459453485
 Transform:
   m_ObjectHideFlags: 0
@@ -738,7 +739,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1459453484}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameManager_CH, Assembly-CSharp
         m_MethodName: Lobby
         m_Mode: 1
         m_Arguments:

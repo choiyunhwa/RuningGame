@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/CHScene.unity
     guid: b6e08d9fa5cf0a545a4498167b2cf87c
+  - enabled: 1
+    path: Assets/01_Scenes/CHLobby.unity
+    guid: ad89766f875e1dc43abb86011c034dfc
   m_configObjects: {}
