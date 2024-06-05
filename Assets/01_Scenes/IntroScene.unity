@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 1459453484}
   - component: {fileID: 1459453487}
   - component: {fileID: 1459453488}
+  - component: {fileID: 1459453489}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -522,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87a91460dd35134088299b3e0df0654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementManager_CH: {fileID: 0}
   dataManager: {fileID: 1459453487}
   buttonControl: {fileID: 0}
   isStart: 0
@@ -562,7 +564,13 @@ MonoBehaviour:
     maxExp: 0a000000140000001e0000002800000032000000
     exp: 0
     stages: 000000
-    highScores: 
+    achievementData:
+      name: 
+      description: 
+      maxCount: 
+      clear: 0
+      level: 0
+      curCount: 0
 --- !u!82 &1459453488
 AudioSource:
   m_ObjectHideFlags: 0
@@ -659,6 +667,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1459453489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459453483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ae2eb0018522949970ce2bde2b651b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002257094
 GameObject:
   m_ObjectHideFlags: 0

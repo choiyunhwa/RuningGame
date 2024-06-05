@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class Data{
@@ -10,7 +11,7 @@ public class Data{
     public float exp;
     //stage
     public bool[] stages;
-
-    //HighScore
-    public int[] highScores;
+    public List<AchievementData> achievementData;
+    //업적
+    // 이름 , 클리어 조건, 클리어 여부, 종류
 }

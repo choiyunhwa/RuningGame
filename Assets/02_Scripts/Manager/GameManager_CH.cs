@@ -26,7 +26,7 @@ public class GameManager_CH : MonoBehaviour
         }
     }
     #endregion
-
+    public AchievementManager_CH achievementManager_CH;
     public DataManager_CH dataManager;
     public ButtonControl buttonControl;
     public bool isStart = false;
@@ -35,6 +35,7 @@ public class GameManager_CH : MonoBehaviour
     public int curScore;
     void Start(){
         Time.timeScale =1;
+        dataManager.LoadGameData();
     }
     void Update(){
         if(isStart){

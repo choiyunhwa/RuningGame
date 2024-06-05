@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class DataManager_CH : MonoBehaviour
@@ -19,10 +20,15 @@ public class DataManager_CH : MonoBehaviour
             string FromJsonData = File.ReadAllText(filePath);
             data = JsonUtility.FromJson<Data>(FromJsonData);
             Debug.Log("불러오기 완료");
+        }else{
+            GameManager_CH.Instance.achievementManager_CH.GenerateData();
         }
         
     }
     public void SaveGameData(){
+
+        //PlayerScript를 한번 찾아보고 밑에 것처럼 저장을 따로 해주어야 한다면 SaveData메소드를 만들 예정;
+        GameManager_CH.Instance.achievementManager_CH.SaveAchievementManager();
         //true 는 prettyPrint Json파일이 예쁘게 정리되어있다.
         string ToJsonData = JsonUtility.ToJson(data, true);
         //파일 저장 위치 : 사용자디렉토리/AppData/LocalLow/회사이름/프로덕트이름 (파일 읽기 쓰기 가능)

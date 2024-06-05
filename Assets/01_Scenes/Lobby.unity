@@ -1424,10 +1424,10 @@ RectTransform:
   - {fileID: 985657841}
   m_Father: {fileID: 1482103710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 269.9, y: -274.265}
+  m_SizeDelta: {x: 1170.2, y: 1189.174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &906550760
 GameObject:
@@ -1989,10 +1989,10 @@ RectTransform:
   - {fileID: 1547684034}
   m_Father: {fileID: 896246821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 26.497, y: 310.317}
-  m_SizeDelta: {x: 976.446, y: 797.37}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -145.9}
+  m_SizeDelta: {x: 1076.446, y: 897.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1060429137
 GameObject:
@@ -2844,10 +2844,10 @@ RectTransform:
   - {fileID: 1324776603}
   m_Father: {fileID: 896246821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 397, y: 935}
-  m_SizeDelta: {x: 241.149, y: 84.355}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 167.45, y: -92}
+  m_SizeDelta: {x: 241.149, y: 84.35501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426124489
 MonoBehaviour:
@@ -3156,7 +3156,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1482103710
 RectTransform:
@@ -3306,7 +3306,7 @@ MonoBehaviour:
         m_MethodName: GameScene
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 8e1d18e4c5cc72645889f83bd81e7a30, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 4c721835f57c63b40a2df5a24de7d7b8, type: 2}
           m_ObjectArgumentAssemblyTypeName: StageData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3831,7 +3831,7 @@ MonoBehaviour:
         m_MethodName: GameScene
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 8e1d18e4c5cc72645889f83bd81e7a30, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: d81450093abcb9745ab0f05b209dcbdb, type: 2}
           m_ObjectArgumentAssemblyTypeName: StageData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
