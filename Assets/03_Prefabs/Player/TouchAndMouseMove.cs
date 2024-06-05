@@ -41,12 +41,16 @@ public class TouchAndMouseMove : MonoBehaviour
         if (pointerPositionAction != null)
         {
             Vector2 pointerPosition = pointerPositionAction.ReadValue<Vector2>();
+
+            Debug.Log($"Touch >> {pointerPosition}");
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(pointerPosition.x, pointerPosition.y, mainCamera.nearClipPlane));
             worldPosition.z = transform.position.z; // Z축 값을 0으로 고정하여 2D 평면 이동
             worldPosition.y = transform.position.y;
             // 이동 범위 제한
             worldPosition.x = Mathf.Clamp(worldPosition.x, minX, maxX);
             transform.position = worldPosition;
+
+            Debug.Log($"WorldPos >> {worldPosition}");
         }
     }
 }
