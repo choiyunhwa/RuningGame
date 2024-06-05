@@ -31,7 +31,8 @@ public class GameManager_CH : MonoBehaviour
     public ButtonControl buttonControl;
     public bool isStart = false;
     public StageData stageData;
-    private int curMonster;
+    public int curMonster;
+    public int curScore;
     void Start(){
         Time.timeScale =1;
     }
@@ -51,10 +52,10 @@ public class GameManager_CH : MonoBehaviour
     }
 
     public void Lobby(){
-        SceneManager.LoadScene("CHLobby");
+        SceneManager.LoadScene("Lobby");
     }
     public void GameScene(){
-        SceneManager.LoadScene("CHScene");
+        SceneManager.LoadScene("GameMainScene _CH");
     }
     //프로그램 종료시 자동 저장
     private void OnApplicationQuit() {
@@ -70,12 +71,13 @@ public class GameManager_CH : MonoBehaviour
         //스테이지를 받아와서 Data에 클리어 했다고 표시 해준다.
     }
 
-    //일단 여기 놔둔것들 몬스터오브젝트에 붙어있는 스크립트에 넣으면 좋을 것 같음
-    //몬스터를 죽였을때
-    /*
-    if(dataManager.data.level>4) return; 
-    public void KillMonster(int monsterLevel){     
-        GameManager.Instance.dataManager.ExpCondition(int monsterLevel);
+    //점수 추가
+    public void AddScore(int value){
+        curScore+=value;
     }
-    */
+    //몬스터가 죽었을 때 경험치
+    public void AddExp(int monsterLevel){
+        if (dataManager.data.level > 4) return;
+        dataManager.ExpCondition(monsterLevel);
+    }
 }

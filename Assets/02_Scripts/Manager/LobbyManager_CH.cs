@@ -7,6 +7,6 @@ public class LobbyManager_CH : MonoBehaviour
     {
         GameManager_CH.Instance.stageData=stageData;
         GameManager_CH.Instance.StartGame();
-        SceneManager.LoadScene("CHScene");
+        SceneManager.LoadScene("GameMainScene _CH");
     }
 }

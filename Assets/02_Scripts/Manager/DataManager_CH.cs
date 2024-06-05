@@ -34,7 +34,8 @@ public class DataManager_CH : MonoBehaviour
         Debug.Log("저장완료");
     }
 
-    internal void ExpCondition(int monsterLevel)
+    //경험치 + Level업
+    public void ExpCondition(int monsterLevel)
     {
         data.exp += monsterLevel;
         if (data.exp > data.maxExp[data.level])

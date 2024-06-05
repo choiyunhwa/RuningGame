@@ -10,4 +10,7 @@ public class Data{
     public float exp;
     //stage
     public bool[] stages;
+
+    //HighScore
+    public int[] highScores;
 }
