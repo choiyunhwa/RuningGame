@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CoinItem : Item
 {
-    public override void ItemEffect()
-    {
-        base.ItemEffect();
-    }
+    //public override void ItemEffect()
+    //{
+    //    base.ItemEffect();
+    //}
 }

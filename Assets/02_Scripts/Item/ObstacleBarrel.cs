@@ -21,9 +21,9 @@ public class ObstacleBarrel : Item
         currentValue = maxValue;
     }
 
-    public override void ItemEffect()
+    public override void ItemEffect(Collider other)
     {
-        base.ItemEffect();
+        base.ItemEffect(other);
 
         //플레이어 공격 데미지
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpeedUpItem : Item
 {
-    public override void ItemEffect()
-    {
-        base.ItemEffect();
-    }
+    //public override void ItemEffect()
+    //{
+    //    base.ItemEffect();
+    //}
 }

@@ -5,4 +5,5 @@ public class StageData : ScriptableObject
 {
     public int stageNum;
     public int monsterCount;
+    public GameObject obstacle;
 }

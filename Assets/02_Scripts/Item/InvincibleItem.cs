@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class InvincibleItem : Item
 {
-    public override void ItemEffect()
-    {
-        base.ItemEffect();
+    //public override void ItemEffect()
+    //{
+    //    base.ItemEffect();
 
-    }
+    //}
 }
