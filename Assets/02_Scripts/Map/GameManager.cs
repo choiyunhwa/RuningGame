@@ -4,27 +4,48 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] enemyObject;
     public Transform[] spawnPoints;
+    public ObjectManager objectManager;
+    public StageData stageData;
 
     public float maxSpawnDelay;
     public float curSpawnDelay;
-    public int selectEnemy;
+    public int curEnemyCnt = 0;
 
     private void Update() 
     {
-        curSpawnDelay += Time.deltaTime;
-
-        if(curSpawnDelay > maxSpawnDelay)
+        if(curEnemyCnt < stageData.monsterCount)
         {
-            spawnEnemy();
+            curSpawnDelay += Time.deltaTime;
 
-            curSpawnDelay = 0;
+            if(curSpawnDelay > maxSpawnDelay)
+            {
+                SpawnEnemy();
+                curEnemyCnt++;
+
+                curSpawnDelay = 0;
+            }
+        }
+        else if(curEnemyCnt == stageData.monsterCount) // 추후에 일반몬스터를 다 없애고 나오는걸로 변경
+        {
+            SpawnEnemy();
+            curEnemyCnt++;
         }    
     }
 
-    void spawnEnemy()
+    void SpawnEnemy()
     {
         int ranPoint = Random.Range(0, 3);
+        int ranEnemy = Random.Range(0, 3);
+        
+        // 보스몬스터 추가
+        if(curEnemyCnt == stageData.monsterCount)
+        {
+            ranEnemy = 3;
+        }
+        
+        GameObject rtnEnemy = objectManager.ActivateObject(enemyObject[ranEnemy].GetComponent<Enemy>().enemySO.name);
 
-        Instantiate(enemyObject[selectEnemy], spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
+        rtnEnemy.transform.position = spawnPoints[ranPoint].position;
+        rtnEnemy.transform.rotation = spawnPoints[ranPoint].rotation;
     }
 }
