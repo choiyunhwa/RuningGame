@@ -26,7 +26,6 @@ public class MapSpawnPoint : MonoBehaviour
         }
     }
 
-
     private void OnDisable()
     {
         foreach (var spawn in spawnPoints)
