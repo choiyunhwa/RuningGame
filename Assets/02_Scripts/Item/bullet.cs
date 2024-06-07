@@ -13,7 +13,7 @@ public class bullet : MonoBehaviour
     {
         if(((1<<other.gameObject.layer) & layerMask) != 0)
         {
-            Enemy enemy =other.GetComponent<Enemy>();
+            Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.OnHit(damage);
