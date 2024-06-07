@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: []
-  playerGroup: {fileID: 0}
+  playerGroup: {fileID: 482575791}
 --- !u!1 &435625787
 GameObject:
   m_ObjectHideFlags: 0

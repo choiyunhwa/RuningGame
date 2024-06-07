@@ -40,8 +40,8 @@ public class Fence : Item
                 Vector3 pos = pl.transform.position + randomPoint;
                 GameObject ob = Instantiate(obj, pos,Quaternion.identity);
                 ob.transform.SetParent(pl.playerGroup);
-                //FollowPlayer follow = ob.AddComponent<FollowPlayer>();
-                //follow.playerTransform = pl.transform;
+                FollowPlayer follow = ob.AddComponent<FollowPlayer>();
+                follow.playerTransform = pl.transform;
             }
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -8,37 +9,38 @@ public class FollowPlayer : MonoBehaviour
     public Transform playerTransform;
     public float offsetRange = 2f;
     private bool isMove = false;
-    void Start()
+    private Rigidbody rigid;
+    public float stoppingDistance = 2f;
+
+    private void OnEnable()
     {
-        //if (playerTransform != null)
-        //{
-        //    MoveToPlayer();
-        //}
+        rigid = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
         if (playerTransform != null)
         {
-            Vector3 randomOffset = new Vector3(
-                Random.Range(-offsetRange, offsetRange),
-                0,
-                Random.Range(-offsetRange, offsetRange)
-            );
-
             MoveToPlayer();
         }
     }
-
 
     private void MoveToPlayer()
     {
         if(!isMove)
         {
-            Debug.Log("ÀÌµ¿!");
-            Vector3 newPos = Vector3.MoveTowards(transform.position, playerTransform.transform.position, speed);
-            transform.position = newPos;
-            isMove = true;
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
+            if (distanceToPlayer > stoppingDistance)
+            {
+                Vector3 direction = (playerTransform.position - transform.position).normalized;
+                transform.position += direction * speed * Time.deltaTime;
+            }
+            else
+            {
+                rigid.constraints = RigidbodyConstraints.FreezeAll;
+                isMove = false;
+            }
         }
     }
 }
