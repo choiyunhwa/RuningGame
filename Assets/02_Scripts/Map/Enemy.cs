@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour
         if (enemySO.health <= 0)
         {
             Debug.Log("맞았다");
+            GameManager_CH.Instance.curMonster--;
+            GameManager_CH.Instance.curScore++;
             gameObject.SetActive(false);
         }
     }
