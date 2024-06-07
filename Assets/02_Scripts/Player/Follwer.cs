@@ -17,6 +17,6 @@ public class HealthBarFollowPlayer : MonoBehaviour
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
 
         // 슬라이더의 위치를 플레이어의 위쪽으로 설정
-        healthSlider.transform.position = screenPosition + new Vector3(0, 50, 0);
+        healthSlider.transform.position = screenPosition + new Vector3(0, 80, 0);
     }
 }

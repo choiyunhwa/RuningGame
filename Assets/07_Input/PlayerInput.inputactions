@@ -39,6 +39,17 @@
                 {
                     "name": "",
                     "id": "a7fe1e58-d0bc-430b-a627-4872dbd2b18a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0da27a06-ddec-4dec-9170-4b2742c0b987",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
