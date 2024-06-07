@@ -12,6 +12,7 @@ public class ObstacleBarrel : Item
 {
     [SerializeField] private ObjectStat objectStat;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private GameObject dropItem;
 
     private int currentValue;
     [SerializeField] private int maxValue;
@@ -32,7 +33,12 @@ public class ObstacleBarrel : Item
             currentValue --;
             UpdateText();
         }
-        Debug.Log(currentValue);
+        
+        if(currentValue <= 0)
+        {
+            Instantiate(dropItem, this.transform);
+            Destroy(this.gameObject);
+        }
     }
 
     private void UpdateText()

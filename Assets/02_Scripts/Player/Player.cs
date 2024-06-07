@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public List<GameObject> playerList = new List<GameObject>(); 
+    public List<GameObject> playerList = new List<GameObject>();
+    public Transform playerGroup;
 }

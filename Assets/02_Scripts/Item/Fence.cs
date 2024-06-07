@@ -24,10 +24,22 @@ public class Fence : Item
         if (other.TryGetComponent<Player>(out Player pl))
         {
             pl.playerList.Add(obj);
-
+                
             for (int i = 0; i < value; i++)
             {
-                Instantiate(obj, other.gameObject.transform);
+                //float randomAngle = Random.Range(Mathf.PI / 2, 3 * Mathf.PI / 2);
+                //Vector3 randomDir = new Vector3(Mathf.Cos(randomAngle), 0, -Mathf.Sin(randomAngle)) * 5f;
+                Vector3 randomPoint = Random.insideUnitSphere;
+
+                if (randomPoint.z > 0)
+                {
+                    randomPoint.z = -randomPoint.z;
+                }
+                randomPoint.y = 0;
+                randomPoint *= 3;
+                Vector3 pos = pl.transform.position + randomPoint;
+                GameObject ob = Instantiate(obj, pos,Quaternion.identity);
+                ob.transform.SetParent(pl.playerGroup);
             }
         }
     }
