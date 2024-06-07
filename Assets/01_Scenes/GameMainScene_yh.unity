@@ -641,7 +641,6 @@ GameObject:
   - component: {fileID: 410903949}
   - component: {fileID: 410903948}
   - component: {fileID: 410903950}
-  - component: {fileID: 410903951}
   - component: {fileID: 410903952}
   m_Layer: 6
   m_Name: Player
@@ -717,19 +716,6 @@ CapsuleCollider:
   m_Height: 1.5640321
   m_Direction: 1
   m_Center: {x: 0.00999999, y: 0.74798393, z: 0.01999998}
---- !u!114 &410903951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410903947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ee2028a7224e0c4b9018f9e2e4534f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputActions: {fileID: -944628639613478452, guid: cd02a1daf825fd0498f6288a154b10cd, type: 3}
 --- !u!114 &410903952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,6 +2403,7 @@ MonoBehaviour:
     maxExp: 0a000000140000001e0000002800000032000000
     exp: 0
     stages: 
+    achievementData: []
 --- !u!4 &1512699394
 Transform:
   m_ObjectHideFlags: 0
