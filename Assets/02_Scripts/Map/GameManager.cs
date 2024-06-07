@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         int ranPoint = Random.Range(0, 3);
         int ranEnemy = Random.Range(0, 3);
         
+        // 보스몬스터 추가
         if(curEnemyCnt == stageData.monsterCount)
         {
             ranEnemy = 3;

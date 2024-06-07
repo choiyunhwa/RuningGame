@@ -104,6 +104,7 @@ public class ObjectManager : MonoBehaviour
             //     break;
         }
 
+        // setACtive(true)
         for (int i = 0; i < targetPool.Length; i++)
         {
             if (!targetPool[i].activeSelf)

@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
+        // 플레이어 따라서 이동
         if (distanceToPlayer > enemySO.stoppingDistance)
         {
             Vector3 direction = (player.position - transform.position).normalized;
