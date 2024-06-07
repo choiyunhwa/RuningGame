@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 928588fdb5bdf7f42a444b40a09dd8c1, type: 3}
-  m_Name: Stage1
+  m_Script: {fileID: 11500000, guid: 7ebffddc61fec634c9c419634e5ced73, type: 3}
+  m_Name: UniqueEnemy
   m_EditorClassIdentifier: 
-  stageNum: 1
-  monsterCount: 5
-  obstacle: {fileID: 0}
+  power: 10
+  terget:
+    serializedVersion: 2
+    m_Bits: 0
+  name: uniqueEnemy
+  health: 25
+  speed: 25
+  stoppingDistance: 1

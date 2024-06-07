@@ -4,52 +4,58 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     ObjectManager objectManager;
-
-    public float speed;
-    public int health;
+    public AttackSO enemySO;
     public Sprite[] sprites;
 
-    SpriteRenderer spriteRenderer;
+    private Transform player;
     Rigidbody rigid;
 
     private void Awake() 
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody>();
+    }
+
+    private void Start() 
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update() 
     {
-        MoveEnemy();
-    }
-
-    void MoveEnemy()
-    {
-        transform.position += Vector3.back * speed * Time.deltaTime;
+        ChasePlayer();
     }
 
    public void OnHit(int damage)
     {
-        health -= damage;
+        enemySO.health -= damage;
         //    spriteRenderer.sprite = sprites[1]; // 피격시 애니메이션
         Invoke("ReturnSprite", 0.1f);
 
-        if (health <= 0)
+        if (enemySO.health <= 0)
         {
             Debug.Log("맞았다");
-            Destroy(gameObject);
+            GameManager_CH.Instance.curMonster--;
+            GameManager_CH.Instance.curScore++;
+            gameObject.SetActive(false);
         }
-    }
-
-    void ReturnSprite()
-    {
-        spriteRenderer.sprite = sprites[0];
     }
 
     private void OnTriggerEnter(Collider other) 
     {
        
+    }
+    void ChasePlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // 플레이어 따라서 이동
+        if (distanceToPlayer > enemySO.stoppingDistance)
+        {
+            Vector3 direction = (player.position - transform.position).normalized;
+
+            rigid.MovePosition(transform.position + direction * enemySO.speed * Time.deltaTime);
         }
+    }
 
 
 }
