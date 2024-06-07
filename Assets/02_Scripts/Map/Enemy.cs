@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -27,14 +28,15 @@ public class Enemy : MonoBehaviour
         transform.position += Vector3.back * speed * Time.deltaTime;
     }
 
-    void OnHit(int damage)
+   public void OnHit(int damage)
     {
         health -= damage;
-        spriteRenderer.sprite = sprites[1]; // 피격시 애니메이션
+        //    spriteRenderer.sprite = sprites[1]; // 피격시 애니메이션
         Invoke("ReturnSprite", 0.1f);
 
         if (health <= 0)
         {
+            Debug.Log("맞았다");
             Destroy(gameObject);
         }
     }
@@ -46,8 +48,8 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        
-    }
+       
+        }
 
 
 }

@@ -6,9 +6,18 @@
             "id": "84a26cc4-3d79-4354-9213-b02af6ee6e72",
             "actions": [
                 {
-                    "name": "PointerPosition",
+                    "name": "MoveTouch",
                     "type": "Value",
                     "id": "cf3dd7f2-1b0a-4c0c-9a5f-68c89506a44a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MoveMouse",
+                    "type": "Value",
+                    "id": "bb002b4c-170d-4668-aaed-2725e0867920",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -23,18 +32,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PointerPosition",
+                    "action": "MoveTouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "a7fe1e58-d0bc-430b-a627-4872dbd2b18a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0da27a06-ddec-4dec-9170-4b2742c0b987",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PointerPosition",
+                    "action": "MoveMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
