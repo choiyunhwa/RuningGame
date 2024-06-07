@@ -1,8 +1,9 @@
 
+using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class ShootingScript : MonoBehaviour
 {
     // ÃÑ¾Ë ÇÁ¸®ÆÕ
     public GameObject bulletPrefab;
