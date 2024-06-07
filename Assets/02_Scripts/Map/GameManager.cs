@@ -5,7 +5,6 @@ public class GameManager : MonoBehaviour
     public GameObject[] enemyObject;
     public Transform[] spawnPoints;
     public ObjectManager objectManager;
-    public StageData stageData;
 
     public float maxSpawnDelay;
     public float curSpawnDelay;
@@ -13,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Update() 
     {
-        if(curEnemyCnt < stageData.monsterCount)
+        if(curEnemyCnt < GameManager_CH.Instance.stageData.monsterCount)
         {
             curSpawnDelay += Time.deltaTime;
 
@@ -25,12 +24,11 @@ public class GameManager : MonoBehaviour
                 curSpawnDelay = 0;
             }
         }
-        else if(curEnemyCnt == stageData.monsterCount) // 추후에 일반몬스터를 다 없애고 나오는걸로 변경
+        else if(curEnemyCnt == GameManager_CH.Instance.stageData.monsterCount) // 추후에 일반몬스터를 다 없애고 나오는걸로 변경
         {
             SpawnEnemy();
             curEnemyCnt++;
-        }
-        
+        }    
     }
 
     void SpawnEnemy()
@@ -38,7 +36,8 @@ public class GameManager : MonoBehaviour
         int ranPoint = Random.Range(0, 3);
         int ranEnemy = Random.Range(0, 3);
         
-        if(curEnemyCnt == stageData.monsterCount)
+        // 보스몬스터 추가
+        if(curEnemyCnt == GameManager_CH.Instance.stageData.monsterCount)
         {
             ranEnemy = 3;
         }
