@@ -4,28 +4,37 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     ObjectManager objectManager;
-
-    public float speed;
-    public int health;
-    public Sprite[] sprites;
-
-    SpriteRenderer spriteRenderer;
+    public AttackSO enemySO;
     Rigidbody rigid;
+    public int health;
+
+    private Transform player;
 
     private void Awake() 
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody>();
+    }
+
+    private void Start() 
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update() 
     {
-        MoveEnemy();
+        ChasePlayer();
     }
 
-    void MoveEnemy()
+    void ChasePlayer()
     {
-        transform.position += Vector3.back * speed * Time.deltaTime;
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer > enemySO.stoppingDistance)
+        {
+            Vector3 direction = (player.position - transform.position).normalized;
+
+            rigid.MovePosition(transform.position + direction * enemySO.speed * Time.deltaTime);
+        }
     }
 
    public void OnHit(int damage)
@@ -40,16 +49,11 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void ReturnSprite()
-    {
-        spriteRenderer.sprite = sprites[0];
-    }
-
+    
     private void OnTriggerEnter(Collider other) 
     {
+        
+    }
        
-        }
-
 
 }
