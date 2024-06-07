@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/01_Scenes/Lobby.unity
     guid: ad89766f875e1dc43abb86011c034dfc
   - enabled: 1
-    path: Assets/01_Scenes/GyeongGeon.unity
+    path: Assets/01_Scenes/GameMainScene.unity
     guid: 019e7db504795d14494c4a3cb6f646f6
   m_configObjects: {}
