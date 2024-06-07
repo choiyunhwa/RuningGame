@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87a91460dd35134088299b3e0df0654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievementManager_CH: {fileID: 0}
+  achievementManager_CH: {fileID: 1459453489}
   dataManager: {fileID: 1459453487}
   buttonControl: {fileID: 0}
   isStart: 0
@@ -565,9 +565,45 @@ MonoBehaviour:
     exp: 0
     stages: 000000
     achievementData:
-      name: 
+    - name: 
       description: 
       maxCount: 
+      id: 0
+      clear: 0
+      level: 0
+      curCount: 0
+    - name: 
+      description: 
+      maxCount: 
+      id: 0
+      clear: 0
+      level: 0
+      curCount: 0
+    - name: 
+      description: 
+      maxCount: 
+      id: 0
+      clear: 0
+      level: 0
+      curCount: 0
+    - name: 
+      description: 
+      maxCount: 
+      id: 0
+      clear: 0
+      level: 0
+      curCount: 0
+    - name: 
+      description: 
+      maxCount: 
+      id: 0
+      clear: 0
+      level: 0
+      curCount: 0
+    - name: 
+      description: 
+      maxCount: 
+      id: 0
       clear: 0
       level: 0
       curCount: 0
@@ -679,6 +715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ae2eb0018522949970ce2bde2b651b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AchievementList: []
+  AchievementClearList: []
 --- !u!1 &2002257094
 GameObject:
   m_ObjectHideFlags: 0

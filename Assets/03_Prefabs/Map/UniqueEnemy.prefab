@@ -1794,6 +1794,7 @@ GameObject:
   - component: {fileID: 7700010707376947845}
   - component: {fileID: 5469261729987518211}
   - component: {fileID: 5913940330588079560}
+  - component: {fileID: -4702790374228303155}
   m_Layer: 0
   m_Name: UniqueEnemy
   m_TagString: Untagged
@@ -1905,13 +1906,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6884632917023830196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3df59943aabfb34f96e34fbf6c00b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   health: 0
+  sprites: []
+--- !u!114 &-4702790374228303155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6884632917023830196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0060b49684c0d7342821e16efceb5401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  health: 1
   sprites: []
 --- !u!1 &7134809884966883594
 GameObject:
