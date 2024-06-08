@@ -52,7 +52,9 @@ public class AchievementManager_CH : MonoBehaviour
     {
         GameManager_CH.Instance.dataManager.data.achievementData = AchievementList;
     }
-
+    public void LoadAchievementManager(){
+        AchievementList = GameManager_CH.Instance.dataManager.data.achievementData;
+    }
 
     //Enemy
     public void MonsterKilled(){

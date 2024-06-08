@@ -19,9 +19,12 @@ public class DataManager_CH : MonoBehaviour
             //File속 내용을 받아온다.
             string FromJsonData = File.ReadAllText(filePath);
             data = JsonUtility.FromJson<Data>(FromJsonData);
-            Debug.Log("불러오기 완료");
-        }else{
+            GameManager_CH.Instance.achievementManager_CH.LoadAchievementManager();
+            Debug.Log("불러오기");
+        }
+        else{
             GameManager_CH.Instance.achievementManager_CH.GenerateData();
+            Debug.Log("업적생성");
         }
         
     }

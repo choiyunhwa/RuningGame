@@ -46,10 +46,12 @@ public class GameManager_CH : MonoBehaviour
             }
         }
     }
-    //시작 버튼을 만들예정
-    public void StartGame(){
+
+    public void OnStartSetData(){
+        Time.timeScale = 1;
         curMonster = stageData.monsterCount;
-        isStart=true;
+        curScore = 0;
+        isStart =true;
     }
 
     public void Lobby(){
@@ -65,15 +67,14 @@ public class GameManager_CH : MonoBehaviour
 
     public void GameClear(){
         //EndingPanel이 나오고 게임이 멈춘다.
-        buttonControl.OpenEndingPanel();
+        buttonControl.EndingPanelControl(true);
         Time.timeScale=0;
-        isStart=false;
         dataManager.data.stages[stageData.stageNum-1] = true;
+        isStart = false;
         stageData = null;
         //이 true값을 가지고 버튼이 생성되도록 하면 되겠다.
         //스테이지를 받아와서 Data에 클리어 했다고 표시 해준다.
     }
-
     //점수 추가
     public void AddScore(int value){
         curScore+=value;

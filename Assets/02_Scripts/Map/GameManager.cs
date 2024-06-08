@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Update() 
     {
+        if(!GameManager_CH.Instance.isStart)return;
         if(curEnemyCnt < GameManager_CH.Instance.stageData.monsterCount)
         {
             curSpawnDelay += Time.deltaTime;
