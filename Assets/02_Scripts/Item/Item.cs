@@ -19,7 +19,6 @@ public class Item : MonoBehaviour, IInteraction
 
     public virtual void ItemEffect(Collider other){}
     
-
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Ãæµ¹!");

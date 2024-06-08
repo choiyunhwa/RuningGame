@@ -26,8 +26,6 @@ public class ObstacleBarrel : Item
     {
         base.ItemEffect(other);
 
-        //플레이어 공격 데미지
-
         if(currentValue > 0)
         {
             currentValue --;

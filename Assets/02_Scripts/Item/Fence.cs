@@ -36,10 +36,12 @@ public class Fence : Item
                     randomPoint.z = -randomPoint.z;
                 }
                 randomPoint.y = 0;
-                randomPoint *= 3;
+                randomPoint *= 5;
                 Vector3 pos = pl.transform.position + randomPoint;
                 GameObject ob = Instantiate(obj, pos,Quaternion.identity);
                 ob.transform.SetParent(pl.playerGroup);
+                FollowPlayer follow = ob.AddComponent<FollowPlayer>();
+                follow.playerTransform = pl.transform;
             }
         }
     }

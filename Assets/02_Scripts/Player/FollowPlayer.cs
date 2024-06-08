@@ -1,29 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
     public float speed = 5f; 
-
-    private Transform playerTransform; 
-    void Start()
+    public Transform playerTransform;
+    private bool isMove = true;
+    public float stoppingDistance = 2f;
+    private RaycastHit hit;
+    private float maxDistance = 1f;
+    private Rigidbody rigid;
+    public LayerMask layer;
+    private void OnEnable()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player"); //Fix
-        if (player != null)
+        rigid = GetComponent<Rigidbody>();
+        layer = LayerMask.GetMask("Player");
+    }
+
+    private void Update()
+    {
+        if (playerTransform != null && isMove)
         {
-            playerTransform = player.transform;
+            MoveToPlayer(hit);
         }
     }
 
-    void Update()
+    private void MoveToPlayer(RaycastHit hit)
     {
-        if (playerTransform != null)
-        {
-            Vector3 targetPosition = playerTransform.position;
-            Vector3 newPosition = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
-            transform.position = newPosition;
-        }
-    }
 
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
+        if (distanceToPlayer > stoppingDistance)
+        {
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layer))
+            {
+                Debug.DrawLine(transform.position, hit.point, Color.red);
+                rigid.constraints = RigidbodyConstraints.FreezeAll;
+                isMove = false;
+                Debug.Log("장애물 감지, 이동 멈춤");
+            }
+            else
+            {
+                Vector3 direction = (playerTransform.position - transform.position).normalized;
+                transform.position += direction * speed * Time.deltaTime;
+                Debug.Log("플레이어를 따라 이동 중");
+            }
+        }
+        else
+        {
+            rigid.constraints = RigidbodyConstraints.FreezeAll;
+            Debug.Log("플레이어 근처에 도착, 이동 멈춤");
+            isMove = false;
+        }
+
+    }
 }

@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainSceneManager_CH : MonoBehaviour
 {
-    public Text scoreTxt;
-    public Text remainingMonsterTxt;//남은 몬스터
+    //YH : Text > TextMeshPro Change
+    public TextMeshProUGUI scoreTxt;
+    public TextMeshProUGUI remainingMonsterTxt;//남은 몬스터
     // Start is called before the first frame update
     void Start()
     {
