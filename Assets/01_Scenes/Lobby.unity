@@ -2217,9 +2217,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1482103704}
+      - m_Target: {fileID: 1482103713}
         m_TargetAssemblyTypeName: ResolutionControl, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: setScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2600,6 +2600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04eb8e13b964488459759713135cbdcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stages:
+  - {fileID: 535365108}
+  - {fileID: 1543541040}
+  - {fileID: 1959991624}
 --- !u!1 &1351725741
 GameObject:
   m_ObjectHideFlags: 0

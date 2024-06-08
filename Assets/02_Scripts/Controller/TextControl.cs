@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TextControl : MonoBehaviour
 {
     [Header("ScoreAndRemain_Canvas")]
-    public Text scoreTxt;
-    public Text remainingMonsterTxt;//남은 몬스터
+    public TextMeshProUGUI scoreTxt;
+    public TextMeshProUGUI remainingMonsterTxt;//남은 몬스터
 
     [Header("EndingPanel_Canvas")]
-    public Text endingBodyTxt;
+    public TextMeshProUGUI endingBodyTxt;
 
     [Header("StartingPanel_Canvas")]
-    public Text startingBodyTxt;
+    public TextMeshProUGUI startingBodyTxt;
 
     void Update()
     {
