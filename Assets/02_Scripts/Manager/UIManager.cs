@@ -5,21 +5,21 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public TextControl textControl;
+    public UIControl uiControl;
     public ButtonControl buttonControl;
     // Start is called before the first frame update
     void Awake(){
-        textControl = GetComponent<TextControl>();
+        uiControl = GetComponent<UIControl>();
         buttonControl = GetComponent<ButtonControl>();
     }
     void Start()
     {
-        textControl.SetStartPanel();
+        GameManager_CH.Instance.uiManager = this;
+        buttonControl.StartBtn+= StartBtnAction;
+        uiControl.SetStartPanel();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    void StartBtnAction(){
+        uiControl.StartingPanelControl(false);
     }
 }

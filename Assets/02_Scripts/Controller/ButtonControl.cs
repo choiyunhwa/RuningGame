@@ -1,23 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonControl : MonoBehaviour
 {
-    [Header("ButtonControl")]
-    public GameObject EndingPanel;
-    public GameObject StartingPanel;
-    void Start(){
-        GameManager_CH.Instance.buttonControl = this;
-        EndingPanel.SetActive(false);
-    }
-    public void EndingPanelControl(bool Active)
-    {
-        EndingPanel.SetActive(Active);
-    }
-    public void StartingPanelControl(bool Active){
-        StartingPanel.SetActive(Active);
-    }
+    public Action StartBtn;
     public void PlayAndStop(Text text){
         if(Time.timeScale>0)
             Time.timeScale=0;
@@ -30,7 +18,7 @@ public class ButtonControl : MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
     public void StartButtonBtn(){
-        StartingPanelControl(false);
         GameManager_CH.Instance.OnStartSetData();
+        StartBtn?.Invoke();
     }
 }

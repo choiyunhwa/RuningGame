@@ -28,7 +28,7 @@ public class GameManager_CH : MonoBehaviour
     #endregion
     public AchievementManager_CH achievementManager_CH;
     public DataManager_CH dataManager;
-    public ButtonControl buttonControl;
+    public UIManager uiManager;
     public bool isStart = false;
     public StageData stageData;
     public int curMonster;
@@ -67,7 +67,7 @@ public class GameManager_CH : MonoBehaviour
 
     public void GameClear(){
         //EndingPanel이 나오고 게임이 멈춘다.
-        buttonControl.EndingPanelControl(true);
+        uiManager.uiControl.EndingPanelControl(true);
         Time.timeScale=0;
         dataManager.data.stages[stageData.stageNum-1] = true;
         isStart = false;

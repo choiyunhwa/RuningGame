@@ -1106,7 +1106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &323408032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2789,9 +2789,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
+      propertyPath: obstacleObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
+      propertyPath: obstacleObj.Array.data[0]
+      value: 
+      objectReference: {fileID: 7859273627721922765, guid: 25b326a8d686e644fa69bdf423247951, type: 3}
     - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
@@ -3068,7 +3076,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1354061598}
         m_TargetAssemblyTypeName: ButtonControl, Assembly-CSharp
-        m_MethodName: Lobby
+        m_MethodName: StartButtonBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4156,8 +4164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7958530e890f77d4cabd5c44c48a901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndingPanel: {fileID: 1491216100}
-  StartingPanel: {fileID: 1705498250}
 --- !u!114 &1354061599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4172,7 +4178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 1086310373}
   remainingMonsterTxt: {fileID: 581082001}
+  EndingPanel: {fileID: 1491216100}
   endingBodyTxt: {fileID: 430894992}
+  stageTxt: {fileID: 0}
+  StartingPanel: {fileID: 1705498250}
   startingBodyTxt: {fileID: 1986718399}
 --- !u!114 &1354061600
 MonoBehaviour:
@@ -4186,7 +4195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfdfdbfdb4216564da6670c1b666a34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textControl: {fileID: 1354061599}
+  uiControl: {fileID: 1354061599}
   buttonControl: {fileID: 1354061598}
 --- !u!1 &1413456113
 GameObject:
@@ -4581,9 +4590,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561371555756681148, guid: 334b49dc6ae88414e962d42b32b177b2, type: 3}
+      propertyPath: obstacleObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561371555756681148, guid: 334b49dc6ae88414e962d42b32b177b2, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7561371555756681148, guid: 334b49dc6ae88414e962d42b32b177b2, type: 3}
+      propertyPath: obstacleObj.Array.data[0]
+      value: 
+      objectReference: {fileID: 7859273627721922765, guid: 25b326a8d686e644fa69bdf423247951, type: 3}
     - target: {fileID: 7561371555756681148, guid: 334b49dc6ae88414e962d42b32b177b2, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
@@ -4627,7 +4644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1491216101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4922,9 +4939,17 @@ PrefabInstance:
       value: Map2
       objectReference: {fileID: 0}
     - target: {fileID: 5913840940783996412, guid: 738800507ce86a74481cd36cf56fcf36, type: 3}
+      propertyPath: obstacleObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913840940783996412, guid: 738800507ce86a74481cd36cf56fcf36, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5913840940783996412, guid: 738800507ce86a74481cd36cf56fcf36, type: 3}
+      propertyPath: obstacleObj.Array.data[0]
+      value: 
+      objectReference: {fileID: 7859273627721922765, guid: 25b326a8d686e644fa69bdf423247951, type: 3}
     - target: {fileID: 5913840940783996412, guid: 738800507ce86a74481cd36cf56fcf36, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
