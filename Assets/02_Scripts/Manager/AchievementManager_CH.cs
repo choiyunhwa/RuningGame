@@ -8,6 +8,7 @@ public enum Type{
 }
 public class AchievementManager_CH : MonoBehaviour
 {
+    //얘도 사실상 컨트롤러네
     //Dictionary는 직렬화가 안되요~
     public List<AchievementData> AchievementList;
     public List<AchievementData> AchievementClearList;
@@ -29,7 +30,7 @@ public class AchievementManager_CH : MonoBehaviour
 
     
     //음 스테이지 끝날때마다 체크를 해볼까?
-    void CheckClear(){
+    public void CheckClear(){
         foreach(AchievementData achievement in AchievementList){
             if (achievement.curCount >= achievement.maxCount[achievement.level])
             {
@@ -45,7 +46,7 @@ public class AchievementManager_CH : MonoBehaviour
     }
 
     void ClearMessage(){
-        
+        Debug.Log("클리어");
     }
 
     public void SaveAchievementManager()

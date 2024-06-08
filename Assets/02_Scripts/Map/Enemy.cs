@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("맞았다");
             GameManager_CH.Instance.curMonster--;
+            GameManager_CH.Instance.achievementManager_CH.MonsterKilled();
             GameManager_CH.Instance.curScore++;
             gameObject.SetActive(false);
         }
