@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8943368451754481564, guid: 8708e310b5f5d2d449ba09f74cfd69aa, type: 3}
+  objectManager: {fileID: 1830949130}
   bulletSpeed: 40
   layerMask:
     serializedVersion: 2
@@ -5783,6 +5784,7 @@ MonoBehaviour:
   enemySPrefab: {fileID: 6540681369557983152, guid: 074423028a9dbbd4892abc40146b1cce, type: 3}
   enemyMPrefab: {fileID: 6839065564630337043, guid: e3071ac1efd24b442a35917676c267ae, type: 3}
   enemyLPrefab: {fileID: 280795203805598139, guid: 720c0152fec3dcc408bb8c69553d8eb9, type: 3}
+  bulletPrefab: {fileID: 8943368451754481564, guid: 8708e310b5f5d2d449ba09f74cfd69aa, type: 3}
 --- !u!4 &1830949131
 Transform:
   m_ObjectHideFlags: 0

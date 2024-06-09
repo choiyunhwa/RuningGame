@@ -4,6 +4,7 @@ public class ShootingScript : MonoBehaviour
 {
     // 총알 프리팹
     public GameObject bulletPrefab;
+    public ObjectManager objectManager;
 
     // 총알 속도
     public float bulletSpeed ;
@@ -69,8 +70,9 @@ public LayerMask layerMask;
     void Shoot(GameObject enemyObject)
     {
         // 총알 생성 및 초기 위치 설정
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.4f, 0), Quaternion.identity);
-
+        GameObject bullet = objectManager.Activatebullet();
+        bullet.transform.position = transform.position + new Vector3(0, 0.4f, 0);
+        //Instantiate(bulletPrefab, , Quaternion.identity);
         // 총알 방향 설정
         Vector3 shootDirection = (enemyObject.transform.position- transform.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;

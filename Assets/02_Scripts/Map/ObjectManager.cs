@@ -6,13 +6,16 @@ public class ObjectManager : MonoBehaviour
     public GameObject enemySPrefab;
     public GameObject enemyMPrefab;
     public GameObject enemyLPrefab;
+    public GameObject bulletPrefab;
 
     GameObject[] uniqueEnemy;
     GameObject[] enemyS;
     GameObject[] enemyM;
     GameObject[] enemyL;
+    GameObject[] bullets;
 
     GameObject[] targetPool;
+
 
     private void Awake() 
     {
@@ -20,10 +23,10 @@ public class ObjectManager : MonoBehaviour
         enemyS = new GameObject[100];
         enemyM = new GameObject[100];
         enemyL = new GameObject[100];
-
+        bullets = new GameObject[20];
         Generate();
     }
-
+    
     void Generate()
     {
         // Enemy
@@ -47,9 +50,28 @@ public class ObjectManager : MonoBehaviour
             enemyL[i] = Instantiate(enemyLPrefab);
             enemyL[i].SetActive(false);
         }
-        
+        for (int i = 0; i < bullets.Length; i++)
+        {
+            bullets[i] = Instantiate(bulletPrefab);
+            bullets[i].SetActive(false);
+        }
     }
+    public GameObject Activatebullet() 
+    {
+        foreach (GameObject bullet in bullets)
+        {
+            if (!bullet.activeInHierarchy)
+            {
+                bullet.SetActive(true);
+                return bullet;
+            }
 
+        }
+
+       
+    
+        return null;
+    }
     public GameObject ActivateObject(string type)
     {
         switch (type)
