@@ -6,10 +6,10 @@ public class ShootingScript : MonoBehaviour
     public GameObject bulletPrefab;
 
     // 총알 속도
-    public float bulletSpeed ;
+    public float bulletSpeed;
 
     // 적 게임 오브젝트 태그
-public LayerMask layerMask;
+    public LayerMask layerMask;
 
     // 총알 발사 거리
     public float shootingDistance ;
@@ -55,7 +55,7 @@ public LayerMask layerMask;
             if (Physics.Raycast(ray, out hitInfo, shootingDistance, layerMask))
             {
                 // 적을 발견하면 총 발사
-                if (hitInfo.collider.gameObject.layer == 7)
+                if (hitInfo.collider.gameObject.layer == 7 || hitInfo.collider.gameObject.layer == 8)
                 {
                     Shoot(hitInfo.transform.gameObject);
                     Debug.Log("적 발견!");

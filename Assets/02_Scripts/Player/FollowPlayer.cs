@@ -8,9 +8,10 @@ public class FollowPlayer : MonoBehaviour
     public float speed = 5f; 
     public Transform playerTransform;
     private bool isMove = true;
-    public float stoppingDistance = 2f;
+    public float stoppingDistance = 0.4f;
     private RaycastHit hit;
     private float maxDistance = 1f;
+    public float sphereRadius = 0.2f;
     private Rigidbody rigid;
     public LayerMask layer;
     private void OnEnable()
@@ -23,28 +24,27 @@ public class FollowPlayer : MonoBehaviour
     {
         if (playerTransform != null && isMove)
         {
-            MoveToPlayer(hit);
+            MoveToPlayer();
         }
     }
 
-    private void MoveToPlayer(RaycastHit hit)
+    private void MoveToPlayer()
     {
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
         if (distanceToPlayer > stoppingDistance)
         {
-
-            if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, layer))
+            Vector3 direction = (playerTransform.position - transform.position).normalized;
+            if (Physics.SphereCast(transform.position, sphereRadius, direction, out hit, maxDistance, layer))
             {
-                Debug.DrawLine(transform.position, hit.point, Color.red);
+                Debug.DrawLine(transform.position, hit.point, Color.blue);
                 rigid.constraints = RigidbodyConstraints.FreezeAll;
                 isMove = false;
                 Debug.Log("장애물 감지, 이동 멈춤");
             }
             else
             {
-                Vector3 direction = (playerTransform.position - transform.position).normalized;
                 transform.position += direction * speed * Time.deltaTime;
                 Debug.Log("플레이어를 따라 이동 중");
             }

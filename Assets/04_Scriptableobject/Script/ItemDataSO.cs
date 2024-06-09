@@ -13,5 +13,4 @@ public class ItemDataSO : ScriptableObject
 {
     public int value = 0;
     public EItemType type;
-    public GameObject itemPrefab;
 }

@@ -32,9 +32,13 @@ public class BackgroundScrolling : MonoBehaviour
 
     void RepositionBackground(int index)
     {
+        backgrounds[index].gameObject.SetActive(false);
+
         Vector3 newPos = backgrounds[index].position;
         newPos.z += backgrounds.Length * backgroundLength;
         backgrounds[index].position = newPos;
+
+        backgrounds[index].gameObject.SetActive(true);
     }
 
 }

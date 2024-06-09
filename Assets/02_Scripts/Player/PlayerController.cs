@@ -15,10 +15,16 @@ public class PlayerController : MonoBehaviour
     private bool Ismouse = false;
     private HealthBar healthBar;
 
+
+    private ShootingScript shoot;
+    private LayerMask layerMask;
+
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         healthBar = GetComponent<HealthBar>();
+        shoot = GetComponent<ShootingScript>();
         mainCamera =Camera.main;
     }
 
@@ -43,8 +49,6 @@ public class PlayerController : MonoBehaviour
                 
             }
           
-          
-
         }
         else if (context.phase == InputActionPhase.Canceled)
         {
@@ -74,4 +78,6 @@ public class PlayerController : MonoBehaviour
             isTakingDamage = false;
         }
     }
+
+    
 }

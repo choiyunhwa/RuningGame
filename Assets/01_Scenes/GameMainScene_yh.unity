@@ -399,7 +399,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!4 &29101711
 Transform:
@@ -2800,7 +2800,11 @@ PrefabInstance:
     - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
       propertyPath: obstacleObj.Array.data[0]
       value: 
-      objectReference: {fileID: 7859273627721922765, guid: 25b326a8d686e644fa69bdf423247951, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
+      propertyPath: obstacleObj.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 

@@ -9,7 +9,7 @@ public class MapSpawnPoint : MonoBehaviour
 
     private void Awake()
     {
-        if(GameManager_CH.Instance.stageData.obstacle.Length > 0)
+        if (GameManager_CH.Instance.stageData.obstacle.Length > 0)
         {
             obstacleObj = GameManager_CH.Instance.stageData.obstacle;
         }
@@ -19,7 +19,7 @@ public class MapSpawnPoint : MonoBehaviour
     {
         if(obstacleObj.Length > 0) 
         {
-            if (Random.value > 0.7f)
+            if (Random.value > 0.9f)
                 return;
 
             int count = Random.Range(0, 3);

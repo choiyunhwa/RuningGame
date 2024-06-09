@@ -359,6 +359,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  value: 10
-  obj: {fileID: 280795203805598139, guid: ea51c68b84abbd9468f49487e060e9d4, type: 3}
+  obj: {fileID: 2165707051975213793, guid: f5a8a13b7de66c945a3f0156fdda20ef, type: 3}
   inequality: 1
+  text: {fileID: 0}

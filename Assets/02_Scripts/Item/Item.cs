@@ -11,6 +11,12 @@ public class Item : MonoBehaviour, IInteraction
     [SerializeField] protected ItemDataSO itemData;
     [SerializeField] protected LayerMask layerMask;
 
+
+    public virtual void Awake()
+    {
+        
+    }
+
     public void GetItemEffect(Collider other)
     {
         ItemEffect(other);

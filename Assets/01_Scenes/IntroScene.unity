@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievementManager_CH: {fileID: 1459453489}
   dataManager: {fileID: 1459453487}
-  buttonControl: {fileID: 0}
+  uiManager: {fileID: 0}
   isStart: 0
   stageData: {fileID: 0}
   curMonster: 0

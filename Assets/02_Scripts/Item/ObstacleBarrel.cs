@@ -15,10 +15,14 @@ public class ObstacleBarrel : Item
     [SerializeField] private GameObject dropItem;
 
     private int currentValue;
-    [SerializeField] private int maxValue;
+    private int maxValue;
 
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
+
+        maxValue = Random.Range(1, 5);
+
         currentValue = maxValue;
         text.text = maxValue.ToString();
     }
@@ -35,7 +39,9 @@ public class ObstacleBarrel : Item
         
         if(currentValue <= 0)
         {
-            Instantiate(dropItem, this.transform.parent);
+            GameObject ob = Instantiate(dropItem, this.transform.position + new Vector3(0, 1f, 0), Quaternion.identity);
+
+            ob.transform.SetParent(this.transform.parent, true);
             Destroy(this.gameObject);
         }
     }

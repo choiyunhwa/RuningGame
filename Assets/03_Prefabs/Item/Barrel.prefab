@@ -256,10 +256,9 @@ MonoBehaviour:
   itemData: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   text: {fileID: 3606764393617332089}
   dropItem: {fileID: 3437256391362416198, guid: 4536997d27de76a498b37e25f088449a, type: 3}
-  maxValue: 0
 --- !u!1 &8559892357221634819
 GameObject:
   m_ObjectHideFlags: 0
