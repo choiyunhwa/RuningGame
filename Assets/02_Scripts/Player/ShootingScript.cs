@@ -7,13 +7,18 @@ public class ShootingScript : MonoBehaviour
     public ObjectManager objectManager;
 
     // 총알 속도
-    public float bulletSpeed ;
+    public float bulletSpeed;
 
     // 적 게임 오브젝트 태그
-public LayerMask layerMask;
+    public LayerMask layerMask;
 
     // 총알 발사 거리
-    public float shootingDistance ;
+    public float shootingDistance;
+
+
+    float attackCoolTime=0.2f;
+    float timer;
+
 
     // Update 함수
     void Update()
@@ -21,6 +26,8 @@ public LayerMask layerMask;
         // 플레이어 주변 적 감지
         DetectAndShootEnemy();
         Debug.DrawRay(transform.position + new Vector3(0, 0.4f, 0), transform.forward * 100, Color.red);
+
+        timer += Time.deltaTime;
 
     }
 
@@ -54,7 +61,14 @@ public LayerMask layerMask;
                 // 적을 발견하면 총 발사
                 if (hitInfo.collider.gameObject.layer == 7)
                 {
-                    Shoot(hitInfo.transform.gameObject);
+                    if (timer >= attackCoolTime)
+                    {
+
+                        Shoot(hitInfo.transform.gameObject);
+
+                        timer = 0;
+
+                    }
                     Debug.Log("적 발견!");
                     enemyDetected = true; // 적을 발견했음을 표시
                 }
@@ -71,7 +85,7 @@ public LayerMask layerMask;
 
         //Instantiate(bulletPrefab, , Quaternion.identity);
         // 총알 방향 설정
-        Vector3 shootDirection = (enemyObject.transform.position- transform.position).normalized;
+        Vector3 shootDirection = (enemyObject.transform.position - transform.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
     }
 }
