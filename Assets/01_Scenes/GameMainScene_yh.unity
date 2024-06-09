@@ -2791,7 +2791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
       propertyPath: obstacleObj.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1547592566126938657, guid: f442d9e2d2edce248867e69f14250ccb, type: 3}
       propertyPath: spawnPoints.Array.size
@@ -4624,7 +4624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7561371555756681148, guid: 334b49dc6ae88414e962d42b32b177b2, type: 3}
       propertyPath: obstacleObj.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7561371555756681148, guid: 334b49dc6ae88414e962d42b32b177b2, type: 3}
       propertyPath: spawnPoints.Array.size
@@ -4973,7 +4973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913840940783996412, guid: 738800507ce86a74481cd36cf56fcf36, type: 3}
       propertyPath: obstacleObj.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5913840940783996412, guid: 738800507ce86a74481cd36cf56fcf36, type: 3}
       propertyPath: spawnPoints.Array.size

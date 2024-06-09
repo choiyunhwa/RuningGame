@@ -5,11 +5,11 @@ using UnityEngine;
 public class MapSpawnPoint : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPoints;
-    private GameObject[] obstacleObj;
+    [SerializeField] private GameObject[] obstacleObj;
 
     private void Awake()
     {
-        if(GameManager_CH.Instance.stageData.obstacle != null)
+        if(GameManager_CH.Instance.stageData.obstacle.Length > 0)
         {
             obstacleObj = GameManager_CH.Instance.stageData.obstacle;
         }
@@ -17,19 +17,22 @@ public class MapSpawnPoint : MonoBehaviour
 
     private void OnEnable()
     {
-        if (Random.value > 0.7f)
-            return;
-
-        int count = Random.Range(0, 3);
-
-        for (int i = 0; i < count; i++)
+        if(obstacleObj.Length > 0) 
         {
-            int spawnValue = Random.Range(0, spawnPoints.Length);
-            int objValue = Random.Range(0, obstacleObj.Length);
-            if (spawnPoints[spawnValue].childCount == 0)
+            if (Random.value > 0.7f)
+                return;
+
+            int count = Random.Range(0, 3);
+
+            for (int i = 0; i < count; i++)
             {
-                GameObject obj = Instantiate(obstacleObj[objValue]);
-                obj.transform.SetParent(spawnPoints[spawnValue], false);
+                int spawnValue = Random.Range(0, spawnPoints.Length);
+                int objValue = Random.Range(0, obstacleObj.Length);
+                if (spawnPoints[spawnValue].childCount == 0)
+                {
+                    GameObject obj = Instantiate(obstacleObj[objValue]);
+                    obj.transform.SetParent(spawnPoints[spawnValue], false);
+                }
             }
         }
     }
