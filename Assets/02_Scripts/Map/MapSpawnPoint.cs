@@ -5,7 +5,15 @@ using UnityEngine;
 public class MapSpawnPoint : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] private GameObject[] obstacleObj;
+    private GameObject[] obstacleObj;
+
+    private void Awake()
+    {
+        if(GameManager_CH.Instance.stageData.obstacle != null)
+        {
+            obstacleObj = GameManager_CH.Instance.stageData.obstacle;
+        }
+    }
 
     private void OnEnable()
     {

@@ -20,6 +20,7 @@ public class ObstacleBarrel : Item
     private void Awake()
     {
         currentValue = maxValue;
+        text.text = maxValue.ToString();
     }
 
     public override void ItemEffect(Collider other)
@@ -34,7 +35,7 @@ public class ObstacleBarrel : Item
         
         if(currentValue <= 0)
         {
-            Instantiate(dropItem, this.transform);
+            Instantiate(dropItem, this.transform.parent);
             Destroy(this.gameObject);
         }
     }
