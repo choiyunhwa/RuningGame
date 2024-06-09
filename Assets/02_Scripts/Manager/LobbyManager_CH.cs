@@ -9,13 +9,14 @@ public class LobbyManager_CH : MonoBehaviour
     Color falseColor = new Color(97f/255f,97f/255f,97f/255f);
 
     public GameObject[] stages;
+    
     [Header("AchievementPanel")]
     public GameObject AchievementPanel;
     public TextMeshProUGUI nameTxt;
     public TextMeshProUGUI descriptionTxt;
     public TextMeshProUGUI progressTxt;
 
-
+    
     void Start(){
         for(int i=1; i<stages.Length;i++){
             bool check = GameManager_CH.Instance.dataManager.data.stages[i - 1];

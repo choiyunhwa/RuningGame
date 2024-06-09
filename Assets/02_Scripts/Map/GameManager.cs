@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private void Update() 
     {
         if(!GameManager_CH.Instance.isStart)return;
-        if(curEnemyCnt < GameManager_CH.Instance.stageData.monsterCount)
+        if(curEnemyCnt < GameManager_CH.Instance.stageData.monsterCount-1)
         {
             curSpawnDelay += Time.deltaTime;
 
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
                 curSpawnDelay = 0;
             }
         }
-        else if(curEnemyCnt == GameManager_CH.Instance.stageData.monsterCount) // 추후에 일반몬스터를 다 없애고 나오는걸로 변경
+        else if(curEnemyCnt == GameManager_CH.Instance.stageData.monsterCount-1) // 추후에 일반몬스터를 다 없애고 나오는걸로 변경
         {
             SpawnEnemy();
             curEnemyCnt++;
