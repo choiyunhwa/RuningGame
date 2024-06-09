@@ -13,11 +13,12 @@ public class PlayerController : MonoBehaviour
     private float maxX = 3f;
     private Rigidbody rigidbody;
     private bool Ismouse = false;
-
+    private HealthBar healthBar;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        healthBar = GetComponent<HealthBar>();
         mainCamera =Camera.main;
     }
 
@@ -51,14 +52,26 @@ public class PlayerController : MonoBehaviour
             Ismouse = false;
         }
     }
- 
-    void Update()
+    private bool isTakingDamage = false;
+    private void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (collision.gameObject.layer == 7 && !isTakingDamage)
         {
-           
-
+            isTakingDamage = true;
+            StartCoroutine(ApplyDamageOverTime(10, 0.05f)); // 매초마다 10의 데미지를 입히는 코루틴 시작
         }
+    }
 
+    private IEnumerator ApplyDamageOverTime(float damageAmount, float interval)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(interval);
+            healthBar.TakeDamage(damageAmount);
+            Debug.Log("맞았다");
+            // 데미지를 입힌 후 일정 시간 동안 데미지를 받지 않도록 isTakingDamage 값을 false로 변경
+            yield return new WaitForSeconds(interval);
+            isTakingDamage = false;
+        }
     }
 }

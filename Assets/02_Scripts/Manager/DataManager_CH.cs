@@ -29,7 +29,7 @@ public class DataManager_CH : MonoBehaviour
         
     }
     public void SaveGameData(){
-
+        
         //PlayerScript를 한번 찾아보고 밑에 것처럼 저장을 따로 해주어야 한다면 SaveData메소드를 만들 예정;
         GameManager_CH.Instance.achievementManager_CH.SaveAchievementManager();
         //true 는 prettyPrint Json파일이 예쁘게 정리되어있다.
