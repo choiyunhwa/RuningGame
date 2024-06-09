@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 3
   monsterCount: 90
+  obstacle:
+  - {fileID: 4855986511635639068, guid: 9b8e4e7b78fe5de4a8b4c1149e79d297, type: 3}
+  - {fileID: 7859273627721922765, guid: 25b326a8d686e644fa69bdf423247951, type: 3}

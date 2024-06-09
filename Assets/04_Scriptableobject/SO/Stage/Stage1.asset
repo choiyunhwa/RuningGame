@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageNum: 1
   monsterCount: 5
-  obstacle: {fileID: 0}
+  obstacle: []

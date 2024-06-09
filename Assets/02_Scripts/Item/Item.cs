@@ -21,7 +21,6 @@ public class Item : MonoBehaviour, IInteraction
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ãæµ¹!");
         if (((1 << other.gameObject.layer) & layerMask) != 0)
         {
             GetItemEffect(other);
