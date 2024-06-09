@@ -4234,7 +4234,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 54, y: -44}
-  m_SizeDelta: {x: 130, y: 135}
+  m_SizeDelta: {x: 82, y: 87}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1413456115
 MonoBehaviour:
@@ -4283,10 +4283,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1354061598}
         m_TargetAssemblyTypeName: ButtonControl, Assembly-CSharp
         m_MethodName: PlayAndStop
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

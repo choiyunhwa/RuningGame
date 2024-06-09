@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 public enum Type{
     MONSTER,
@@ -12,6 +13,10 @@ public class AchievementManager_CH : MonoBehaviour
     //Dictionary는 직렬화가 안되요~
     public List<AchievementData> AchievementList;
     public List<AchievementData> AchievementClearList;
+    [Header("ClearPanel")]
+    public GameObject clearPanel;
+    Animator animator;
+    public TextMeshProUGUI text;
     void Awake(){
         AchievementList = new List<AchievementData>();
         AchievementClearList = new List<AchievementData>();
@@ -19,7 +24,7 @@ public class AchievementManager_CH : MonoBehaviour
 
     void Start()
     {
-        
+        animator = clearPanel.GetComponent<Animator>();
         GameManager_CH.Instance.achievementManager_CH = this;
     }
 
@@ -32,23 +37,34 @@ public class AchievementManager_CH : MonoBehaviour
     //음 스테이지 끝날때마다 체크를 해볼까?
     public void CheckClear(){
         foreach(AchievementData achievement in AchievementList){
+            //ex 잡은 몬스터가 기준치보다 높을 때 
             if (achievement.curCount >= achievement.maxCount[achievement.level])
             {
                 achievement.level++;
+                //단계별 업적을 전부 클리어시
                 if (achievement.level >= achievement.maxCount.Length)
                 {
                     AchievementClearList.Add(achievement);
                     AchievementList.Remove(achievement);
                 }
-                ClearMessage();
+                ClearMessage(achievement);
             }
         }
     }
 
-    void ClearMessage(){
-        Debug.Log("클리어");
+    void ClearMessage(AchievementData data)
+    {
+        text.text = $"업적 : {data.name}클리어!";
+        clearPanel.SetActive(true);
+        animator.SetBool("On",true);
+        StartCoroutine(ClearMessageClose());
     }
-
+    IEnumerator ClearMessageClose(){
+        yield return new WaitForSeconds(2);
+        animator.SetBool("On", false);
+        yield return new WaitForSeconds(0.5f);
+        clearPanel.SetActive(false);
+    }
     public void SaveAchievementManager()
     {
         GameManager_CH.Instance.dataManager.data.achievementData = AchievementList;
