@@ -25,29 +25,45 @@ public LayerMask layerMask;
         Debug.DrawRay(transform.position + new Vector3(0, 0.4f, 0), transform.forward * 100, Color.red);
 
     }
-    
+
     // 플레이어 주변 적 감지 및 발사 함수
     void DetectAndShootEnemy()
     {
-        // 시선 (ray를 쏘는 위치, 쏘는 방향)
-      
-        Ray ray = new Ray(transform.position + new Vector3(0, 0.4f, 0), transform.forward);
-      
-        // 닿은 곳의 정보
-        RaycastHit hitInfo;
+        // 감지 각도 설정
+        float detectionAngle = 45f; // 감지할 각도 (예: 45도)
 
-        // 바라본다
-        if (Physics.Raycast(ray, out hitInfo, shootingDistance,layerMask))
+        // 레이 발사 지점과 방향 설정
+        Vector3 rayOrigin = transform.position + new Vector3(0, 0.4f, 0); // 레이 발사 위치
+        Vector3 forward = transform.forward; // 현재 방향
+
+        // 적을 발견한 경우를 나타내는 변수
+        bool enemyDetected = false;
+
+        // 여러 각도로 레이 발사하여 감지
+        for (float angle = -detectionAngle / 2; angle <= detectionAngle / 2; angle += 5f)
         {
-                Shoot(hitInfo.transform.gameObject);
+            // 적을 이미 발견했으면 종료
+            if (enemyDetected)
+                break;
 
-            Debug.Log("적");
-            // 닿았다 (Raycast가 true일때)
-            if (hitInfo.collider.gameObject.layer == 7)
+            // 현재 각도에 따른 방향 계산
+            Quaternion rotation = Quaternion.AngleAxis(angle, transform.up);
+            Vector3 direction = rotation * forward;
+
+            // 레이 생성
+            Ray ray = new Ray(rayOrigin, direction);
+
+            // 레이 쏘기
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo, shootingDistance, layerMask))
             {
-                Debug.Log("총 ");
-                // 적 발견 시 총 발사
-                Shoot(hitInfo.transform.gameObject);
+                // 적을 발견하면 총 발사
+                if (hitInfo.collider.gameObject.layer == 7)
+                {
+                    Shoot(hitInfo.transform.gameObject);
+                    Debug.Log("적 발견!");
+                    enemyDetected = true; // 적을 발견했음을 표시
+                }
             }
         }
     }
