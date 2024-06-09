@@ -23,7 +23,7 @@ public class ObjectManager : MonoBehaviour
         enemyS = new GameObject[100];
         enemyM = new GameObject[100];
         enemyL = new GameObject[100];
-        bullets = new GameObject[20];
+        bullets = new GameObject[1000];
         Generate();
     }
     

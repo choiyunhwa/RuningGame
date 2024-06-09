@@ -40,10 +40,6 @@ public LayerMask layerMask;
         // 여러 각도로 레이 발사하여 감지
         for (float angle = -detectionAngle / 2; angle <= detectionAngle / 2; angle += 5f)
         {
-            // 적을 이미 발견했으면 종료
-            if (enemyDetected)
-                break;
-
             // 현재 각도에 따른 방향 계산
             Quaternion rotation = Quaternion.AngleAxis(angle, transform.up);
             Vector3 direction = rotation * forward;
@@ -72,6 +68,7 @@ public LayerMask layerMask;
         // 총알 생성 및 초기 위치 설정
         GameObject bullet = objectManager.Activatebullet();
         bullet.transform.position = transform.position + new Vector3(0, 0.4f, 0);
+
         //Instantiate(bulletPrefab, , Quaternion.identity);
         // 총알 방향 설정
         Vector3 shootDirection = (enemyObject.transform.position- transform.position).normalized;

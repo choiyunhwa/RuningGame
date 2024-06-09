@@ -347,11 +347,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8943368451754481564, guid: 8708e310b5f5d2d449ba09f74cfd69aa, type: 3}
   objectManager: {fileID: 1830949130}
-  bulletSpeed: 40
+  bulletSpeed: 20
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  shootingDistance: 20
+  shootingDistance: 10
 --- !u!136 &29101709
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!4 &29101711
 Transform:
