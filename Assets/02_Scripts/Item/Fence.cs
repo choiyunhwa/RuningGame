@@ -102,8 +102,11 @@ public class Fence : Item
 
                 for (int i = childrenToRemove - 1; i >= 0; i--)
                 {
+                    //pl.playerList.RemoveAt(i);
+                    //Destroy(playerTransform.GetChild(0).gameObject);
+                    GameObject child = pl.playerList[i];
                     pl.playerList.RemoveAt(i);
-                    Destroy(playerTransform.GetChild(0).gameObject);
+                    Destroy(child);
                 }
             }
         }
