@@ -9,6 +9,10 @@ public class bullet : MonoBehaviour
     public int damage =0;
 
 
+    private void Start()
+    {
+        StartCoroutine(Destroy());
+    }
     public void OnTriggerEnter(Collider other)
     {
         if(((1<<other.gameObject.layer) & layerMask) != 0)
@@ -25,6 +29,11 @@ public class bullet : MonoBehaviour
         //{
 
         //}
+    }
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        DestroyBullet();
     }
 
     public void DestroyBullet()

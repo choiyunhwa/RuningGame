@@ -4,6 +4,7 @@ public class ShootingScript : MonoBehaviour
 {
     // 총알 프리팹
     public GameObject bulletPrefab;
+    public ObjectManager objectManager;
 
     // 총알 속도
     public float bulletSpeed;
@@ -12,7 +13,12 @@ public class ShootingScript : MonoBehaviour
     public LayerMask layerMask;
 
     // 총알 발사 거리
-    public float shootingDistance ;
+    public float shootingDistance;
+
+
+    float attackCoolTime=0.2f;
+    float timer;
+
 
     // Update 함수
     void Update()
@@ -20,6 +26,8 @@ public class ShootingScript : MonoBehaviour
         // 플레이어 주변 적 감지
         DetectAndShootEnemy();
         Debug.DrawRay(transform.position + new Vector3(0, 0.4f, 0), transform.forward * 100, Color.red);
+
+        timer += Time.deltaTime;
 
     }
 
@@ -39,10 +47,6 @@ public class ShootingScript : MonoBehaviour
         // 여러 각도로 레이 발사하여 감지
         for (float angle = -detectionAngle / 2; angle <= detectionAngle / 2; angle += 5f)
         {
-            // 적을 이미 발견했으면 종료
-            if (enemyDetected)
-                break;
-
             // 현재 각도에 따른 방향 계산
             Quaternion rotation = Quaternion.AngleAxis(angle, transform.up);
             Vector3 direction = rotation * forward;
@@ -57,7 +61,14 @@ public class ShootingScript : MonoBehaviour
                 // 적을 발견하면 총 발사
                 if (hitInfo.collider.gameObject.layer == 7 || hitInfo.collider.gameObject.layer == 8)
                 {
-                    Shoot(hitInfo.transform.gameObject);
+                    if (timer >= attackCoolTime)
+                    {
+
+                        Shoot(hitInfo.transform.gameObject);
+
+                        timer = 0;
+
+                    }
                     Debug.Log("적 발견!");
                     enemyDetected = true; // 적을 발견했음을 표시
                 }
@@ -69,10 +80,12 @@ public class ShootingScript : MonoBehaviour
     void Shoot(GameObject enemyObject)
     {
         // 총알 생성 및 초기 위치 설정
-        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.4f, 0), Quaternion.identity);
+        GameObject bullet = objectManager.Activatebullet();
+        bullet.transform.position = transform.position + new Vector3(0, 0.4f, 0);
 
+        //Instantiate(bulletPrefab, , Quaternion.identity);
         // 총알 방향 설정
-        Vector3 shootDirection = (enemyObject.transform.position- transform.position).normalized;
+        Vector3 shootDirection = (enemyObject.transform.position - transform.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
     }
 }
