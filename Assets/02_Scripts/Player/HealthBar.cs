@@ -4,9 +4,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-     Enemy Enemy= new Enemy();
-
-    public LayerMask layerMask;
+    
+   // public LayerMask layerMask;
 
     // 최대 체력
 
