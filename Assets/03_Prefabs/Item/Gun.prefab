@@ -125,6 +125,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   audioSource: {fileID: 5044307826511039374}
+  particleObj: {fileID: 8900547414998838963}
 --- !u!82 &5044307826511039374
 AudioSource:
   m_ObjectHideFlags: 0

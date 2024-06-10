@@ -6,6 +6,7 @@ public class Gun : Item
 {
     public AudioSource audioSource;
     private MeshRenderer renderer;
+    [SerializeField] private GameObject particleObj;
 
     private int value = 3;
     public override void Awake()
@@ -23,6 +24,7 @@ public class Gun : Item
             pl.bulletSpeed += value;
 
             renderer.enabled = false;
+            particleObj.SetActive(false);
 
             Invoke("DestroyGun", 1f);
         }

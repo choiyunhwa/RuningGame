@@ -10,7 +10,7 @@ public class ObjectStat
 }
 public class ObstacleBarrel : Item
 {
-    [SerializeField] private ObjectStat objectStat;
+    //[SerializeField] private ObjectStat objectStat;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject dropItem;
 
@@ -21,7 +21,7 @@ public class ObstacleBarrel : Item
     {
         base.Awake();
 
-        maxValue = Random.Range(1, 2);
+        maxValue = Random.Range(1, 50);
 
         currentValue = maxValue;
         text.text = maxValue.ToString();
