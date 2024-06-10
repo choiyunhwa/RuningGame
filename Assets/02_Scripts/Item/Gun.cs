@@ -5,11 +5,13 @@ using UnityEngine;
 public class Gun : Item
 {
     public AudioSource audioSource;
+    private MeshRenderer renderer;
 
     private int value = 3;
     public override void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        renderer= GetComponent<MeshRenderer>();
     }
     public override void ItemEffect(Collider other)
     {
@@ -19,8 +21,16 @@ public class Gun : Item
             Debug.Log("ÃÑ È¹µæ!");
             audioSource.Play();
             pl.bulletSpeed += value;
-            Destroy(this.gameObject);
+
+            renderer.enabled = false;
+
+            Invoke("DestroyGun", 1f);
         }
+    }
+
+    private void DestroyGun()
+    {
+        Destroy(this.gameObject);
     }
 
 }
