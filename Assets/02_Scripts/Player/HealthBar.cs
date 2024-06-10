@@ -37,6 +37,8 @@ public class HealthBar : MonoBehaviour
         currentHealth -= damage; // 피해를 입음
         healthSlider.value = currentHealth;
 
+        Debug.Log("공격 받는 중");
+
         OnDamage?.Invoke();
         if (currentHealth <= 0)
         {

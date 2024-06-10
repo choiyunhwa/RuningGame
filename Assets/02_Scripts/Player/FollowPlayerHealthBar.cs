@@ -35,7 +35,7 @@ public class FollowPlayerHealthBar : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            GameManager_CH.Instance.DamageEvent();
+            //GameManager_CH.Instance.DamageEvent();
         }
     }
 
