@@ -5323,7 +5323,7 @@ MonoBehaviour:
   stageTxt: {fileID: 623726632}
   StartingPanel: {fileID: 1705498250}
   startingBodyTxt: {fileID: 1986718399}
-  stopAndPlayerPanel: {fileID: 558798931}
+  stopAndPlayerPanel: {fileID: 997068078}
 --- !u!114 &1354061600
 MonoBehaviour:
   m_ObjectHideFlags: 0
