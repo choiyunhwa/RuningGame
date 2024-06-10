@@ -4,12 +4,8 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    Enemy Enemy= new Enemy();
-
-    public LayerMask layerMask;
-
-    public event Action OnDamage;
-
+    
+   // public LayerMask layerMask;
 
     // 최대 체력
 
@@ -38,8 +34,6 @@ public class HealthBar : MonoBehaviour
     public void TakeDamage(float damage) {
         currentHealth -= damage; // 피해를 입음
         healthSlider.value = currentHealth;
-
-        OnDamage.Invoke();
 
         if (currentHealth <= 0)
         {

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Slider healthSlider;
+   // public Slider healthSlider;
     private Vector2 curMovementInput;
     private Camera mainCamera;
     private float minX = -3f;

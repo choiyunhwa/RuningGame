@@ -314,7 +314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb82213f49b7034b8176c7d26066788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 25942046}
 --- !u!114 &29101707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,9 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76a35b3c6f3aff4da7b092005c9f28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 128
   maxHealth: 100
   currentHealth: 50
   healthSlider: {fileID: 25942046}
@@ -2525,7 +2521,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 25942046}
+  player2healthSlider: {fileID: 0}
+  EnemyhealthSlider: {fileID: 0}
   player: {fileID: 29101711}
+  player2: {fileID: 3830847026460137997, guid: f5a8a13b7de66c945a3f0156fdda20ef, type: 3}
+  Enemy: {fileID: 230897803435902397, guid: 0bb2fd6e4c78e8c459d73879430694a3, type: 3}
 --- !u!1 &649216319
 GameObject:
   m_ObjectHideFlags: 0
