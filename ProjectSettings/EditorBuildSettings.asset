@@ -13,8 +13,8 @@ EditorBuildSettings:
     guid: ad89766f875e1dc43abb86011c034dfc
   - enabled: 1
     path: Assets/01_Scenes/GameMainScene.unity
-    guid: 019e7db504795d14494c4a3cb6f646f6
-  - enabled: 1
+    guid: 332e5ada200641b4bbf55262067fce44
+  - enabled: 0
     path: Assets/01_Scenes/GameMainScene_GyeongGeon.unity
     guid: a4d0af1d9c9cfa04ba30940f23d60325
   m_configObjects: {}
