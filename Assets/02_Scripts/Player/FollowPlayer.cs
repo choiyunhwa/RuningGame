@@ -41,18 +41,15 @@ public class FollowPlayer : MonoBehaviour
                 Debug.DrawLine(transform.position, hit.point, Color.blue);
                 rigid.constraints = RigidbodyConstraints.FreezeAll;
                 isMove = false;
-                Debug.Log("장애물 감지, 이동 멈춤");
             }
             else
             {
                 transform.position += direction * speed * Time.deltaTime;
-                Debug.Log("플레이어를 따라 이동 중");
             }
         }
         else
         {
             rigid.constraints = RigidbodyConstraints.FreezeAll;
-            Debug.Log("플레이어 근처에 도착, 이동 멈춤");
             isMove = false;
         }
 
