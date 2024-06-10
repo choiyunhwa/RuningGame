@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         int ranEnemy = Random.Range(0, 3);
         
         // 보스몬스터 추가
-        if(curEnemyCnt == GameManager_CH.Instance.stageData.monsterCount)
+        if(curEnemyCnt == GameManager_CH.Instance.stageData.monsterCount-1)
         {
             ranEnemy = 3;
         }

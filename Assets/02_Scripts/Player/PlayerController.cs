@@ -11,18 +11,18 @@ public class PlayerController : MonoBehaviour
     private Camera mainCamera;
     private float minX = -3f;
     private float maxX = 3f;
-    private Rigidbody rigidbody;
+   
     private bool Ismouse = false;
     private HealthBar healthBar;
 
 
     private ShootingScript shoot;
-    private LayerMask layerMask;
+
 
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+       
         healthBar = GetComponent<HealthBar>();
         shoot = GetComponent<ShootingScript>();
         mainCamera =Camera.main;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit))
             {
-                //Debug.Log(hit.point);
+                
                 float xpos = Mathf.Clamp(hit.point.x, minX, maxX);
                 transform.position =new Vector3(xpos,transform.position.y,transform.position.z);
                 
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         else if (context.phase == InputActionPhase.Canceled)
         {
             curMovementInput = Vector2.zero;
-            Ismouse = false;
+           
         }
     }
     private bool isTakingDamage = false;

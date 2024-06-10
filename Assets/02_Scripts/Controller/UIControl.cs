@@ -17,10 +17,13 @@ public class UIControl : MonoBehaviour
     [Header("StartingPanel_Canvas")]
     public GameObject StartingPanel;
     public TextMeshProUGUI startingBodyTxt;
+    [Header("StopAndPlayer_Canvas")]
+    public GameObject stopAndPlayerPanel;
 
 
     void Start(){
         EndingPanel.SetActive(false);
+        stopAndPlayerPanel.SetActive(false);
     }
     void Update()
     {
@@ -29,7 +32,7 @@ public class UIControl : MonoBehaviour
     }
     public void EndingPanelControl(bool Active)
     {
-        stageTxt.text=GameManager_CH.Instance.stageData.stageNum.ToString();
+        stageTxt.text=$"스테이지{GameManager_CH.Instance.stageData.stageNum.ToString()}";
         EndingPanel.SetActive(Active);
     }
     public void StartingPanelControl(bool Active){
@@ -41,5 +44,8 @@ public class UIControl : MonoBehaviour
         StageData stageData = GameManager_CH.Instance.stageData;
         startingBodyTxt.text = $"설명 : 몬스터{stageData.monsterCount}마리 출현";
         startingBodyTxt.gameObject.SetActive(true);
+    }
+    public void StopAndPlayerPanelControl(){
+        stopAndPlayerPanel.SetActive(!stopAndPlayerPanel.activeInHierarchy);
     }
 }
