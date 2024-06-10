@@ -21,7 +21,8 @@ public class UIManager : MonoBehaviour
     }
 
     public void PlayAndStopBtn(){
-        buttonControl.StartButton();
+        Debug.Log("실행");
+        buttonControl.PlayAndStop();
         uiControl.StopAndPlayerPanelControl();
     }
 }

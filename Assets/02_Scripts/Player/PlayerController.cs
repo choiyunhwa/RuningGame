@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
    
     public void OnMoveMouse(InputAction.CallbackContext context)
     {
+        if(Time.timeScale==0)return;
         if (context.phase == InputActionPhase.Performed)
         {
           
