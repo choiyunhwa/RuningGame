@@ -29,7 +29,7 @@ public class UIControl : MonoBehaviour
     }
     public void EndingPanelControl(bool Active)
     {
-        stageTxt.text=GameManager_CH.Instance.stageData.stageNum.ToString();
+        stageTxt.text=$"스테이지{GameManager_CH.Instance.stageData.stageNum.ToString()}";
         EndingPanel.SetActive(Active);
     }
     public void StartingPanelControl(bool Active){

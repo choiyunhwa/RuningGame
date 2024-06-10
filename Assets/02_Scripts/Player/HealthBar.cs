@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour
     public void TakeDamage(float damage) {
         currentHealth -= damage; // 피해를 입음
         healthSlider.value = currentHealth;
-
+    
         if (currentHealth <= 0)
         {
            Debug.Log("사망");
