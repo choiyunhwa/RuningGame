@@ -22,4 +22,9 @@ public class UIManager : MonoBehaviour
     void StartBtnAction(){
         uiControl.StartingPanelControl(false);
     }
+
+    public void PlayAndStopBtn(){
+        buttonControl.StartButton();
+        uiControl.StopAndPlayerPanelControl();
+    }
 }

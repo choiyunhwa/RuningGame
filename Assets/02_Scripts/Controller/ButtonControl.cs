@@ -15,7 +15,7 @@ public class ButtonControl : MonoBehaviour
     public void Lobby(){
         SceneManager.LoadScene("Lobby");
     }
-    public void StartButtonBtn(){
+    public void StartButton(){
         GameManager_CH.Instance.OnStartSetData();
         StartBtn?.Invoke();
     }
