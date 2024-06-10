@@ -21,7 +21,7 @@ public class ObstacleBarrel : Item
     {
         base.Awake();
 
-        maxValue = Random.Range(1, 50);
+        maxValue = Random.Range(1, 10);
 
         currentValue = maxValue;
         text.text = maxValue.ToString();
