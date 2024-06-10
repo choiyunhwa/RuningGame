@@ -38,9 +38,7 @@ public class UIControl : MonoBehaviour
     }
     public void EndingPanelControl2(bool Active)
     {
-        Debug.Log(stageTxt.text);
-        Debug.Log(GameManager_CH.Instance.stageData.stageNum.ToString());
-        stageTxt.text = $"스테이지{GameManager_CH.Instance.stageData.stageNum.ToString()}";
+        stageTxt2.text = $"스테이지{GameManager_CH.Instance.stageData.stageNum.ToString()}";
         EndingPanel2.SetActive(Active);
 
     }
