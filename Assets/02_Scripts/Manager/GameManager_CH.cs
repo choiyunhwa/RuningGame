@@ -77,6 +77,15 @@ public class GameManager_CH : MonoBehaviour
         //이 true값을 가지고 버튼이 생성되도록 하면 되겠다.
         //스테이지를 받아와서 Data에 클리어 했다고 표시 해준다.
     }
+    public void GameOver()
+    {
+        uiManager.uiControl.EndingPanelControl2(true);
+        Time.timeScale = 0;
+        dataManager.data.stages[stageData.stageNum - 1] = true;
+        isStart = false;
+        stageData = null;
+        achievementManager_CH.CheckClear();
+    }
     //점수 추가
     public void AddScore(int value){
         curScore+=value;

@@ -43,7 +43,8 @@ public class HealthBar : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-           Debug.Log("사망");
+            GameManager_CH.Instance.GameOver();
+            Debug.Log("사망");
         }
         // 슬라이더의 현재 값을 현재 체력으로 업데이트
     }
