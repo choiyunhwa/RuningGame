@@ -2,28 +2,33 @@ using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
 {
-    // ÃÑ¾Ë ÇÁ¸®ÆÕ
+    // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public GameObject bulletPrefab;
     public ObjectManager objectManager;
+    private AudioSource audioSource;
 
-    // ÃÑ¾Ë ¼Óµµ
+    // ï¿½Ñ¾ï¿½ ï¿½Óµï¿½
     public float bulletSpeed;
 
-    // Àû °ÔÀÓ ¿ÀºêÁ§Æ® ÅÂ±×
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Â±ï¿½
     public LayerMask layerMask;
 
-    // ÃÑ¾Ë ¹ß»ç °Å¸®
+    // ï¿½Ñ¾ï¿½ ï¿½ß»ï¿½ ï¿½Å¸ï¿½
     public float shootingDistance;
 
 
     float attackCoolTime=0.2f;
     float timer;
 
+    private void Awake() 
+    {
+         audioSource = gameObject.GetComponent<AudioSource>();    
+    }
 
-    // Update ÇÔ¼ö
+    // Update ï¿½Ô¼ï¿½
     void Update()
     {
-        // ÇÃ·¹ÀÌ¾î ÁÖº¯ Àû °¨Áö
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Öºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         DetectAndShootEnemy();
         Debug.DrawRay(transform.position + new Vector3(0, 0.4f, 0), transform.forward * 100, Color.red);
 
@@ -31,60 +36,60 @@ public class ShootingScript : MonoBehaviour
 
     }
 
-    // ÇÃ·¹ÀÌ¾î ÁÖº¯ Àû °¨Áö ¹× ¹ß»ç ÇÔ¼ö
+    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Öºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½Ô¼ï¿½
     void DetectAndShootEnemy()
     {
-        // °¨Áö °¢µµ ¼³Á¤
-        float detectionAngle = 45f; // °¨ÁöÇÒ °¢µµ (¿¹: 45µµ)
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        float detectionAngle = 45f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½: 45ï¿½ï¿½)
 
-        // ·¹ÀÌ ¹ß»ç ÁöÁ¡°ú ¹æÇâ ¼³Á¤
-        Vector3 rayOrigin = transform.position + new Vector3(0, 0.4f, 0); // ·¹ÀÌ ¹ß»ç À§Ä¡
-        Vector3 forward = transform.forward; // ÇöÀç ¹æÇâ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        Vector3 rayOrigin = transform.position + new Vector3(0, 0.4f, 0); // ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½Ä¡
+        Vector3 forward = transform.forward; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // ÀûÀ» ¹ß°ßÇÑ °æ¿ì¸¦ ³ªÅ¸³»´Â º¯¼ö
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ì¸¦ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         bool enemyDetected = false;
 
-        // ¿©·¯ °¢µµ·Î ·¹ÀÌ ¹ß»çÇÏ¿© °¨Áö
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½
         for (float angle = -detectionAngle / 2; angle <= detectionAngle / 2; angle += 5f)
         {
-            // ÇöÀç °¢µµ¿¡ µû¸¥ ¹æÇâ °è»ê
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             Quaternion rotation = Quaternion.AngleAxis(angle, transform.up);
             Vector3 direction = rotation * forward;
 
-            // ·¹ÀÌ »ý¼º
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Ray ray = new Ray(rayOrigin, direction);
 
-            // ·¹ÀÌ ½î±â
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, shootingDistance, layerMask))
             {
-                // ÀûÀ» ¹ß°ßÇÏ¸é ÃÑ ¹ß»ç
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ ï¿½ß»ï¿½
                 if (hitInfo.collider.gameObject.layer == 7 || hitInfo.collider.gameObject.layer == 8)
                 {
                     if (timer >= attackCoolTime)
                     {
-
+                        audioSource.Play();
                         Shoot(hitInfo.transform.gameObject);
 
                         timer = 0;
 
                     }
-                    Debug.Log("Àû ¹ß°ß!");
-                    enemyDetected = true; // ÀûÀ» ¹ß°ßÇßÀ½À» Ç¥½Ã
+                    Debug.Log("ï¿½ï¿½ ï¿½ß°ï¿½!");
+                    enemyDetected = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
                 }
             }
         }
     }
 
-    // ÃÑ ¹ß»ç ÇÔ¼ö
+    // ï¿½ï¿½ ï¿½ß»ï¿½ ï¿½Ô¼ï¿½
     void Shoot(GameObject enemyObject)
     {
-        // ÃÑ¾Ë »ý¼º ¹× ÃÊ±â À§Ä¡ ¼³Á¤
+        // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
         GameObject bullet = objectManager.Activatebullet();
         bullet.transform.position = transform.position + new Vector3(0, 0.4f, 0);
 
         //Instantiate(bulletPrefab, , Quaternion.identity);
-        // ÃÑ¾Ë ¹æÇâ ¼³Á¤
+        // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Vector3 shootDirection = (enemyObject.transform.position - transform.position).normalized;
         bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
     }
