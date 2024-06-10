@@ -51,6 +51,12 @@ public class ZombieCharacterControl : MonoBehaviour
                 Debug.LogError("Unsupported state");
                 break;
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // 트리거 설정
+            m_animator.SetTrigger("Attack");
+        }
     }
 
     private void TankUpdate()
