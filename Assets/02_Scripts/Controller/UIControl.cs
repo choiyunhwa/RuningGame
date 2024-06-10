@@ -10,6 +10,10 @@ public class UIControl : MonoBehaviour
     public GameObject EndingPanel;
     public TextMeshProUGUI endingBodyTxt;
     public TextMeshProUGUI stageTxt;
+    [Header("EndingPanel_Canvas")]
+    public GameObject EndingPanel2;
+    public TextMeshProUGUI endingBodyTxt2;
+    public TextMeshProUGUI stageTxt2;
     [Header("StartingPanel_Canvas")]
     public GameObject StartingPanel;
     public TextMeshProUGUI startingBodyTxt;
@@ -19,6 +23,7 @@ public class UIControl : MonoBehaviour
 
     void Start(){
         EndingPanel.SetActive(false);
+        EndingPanel2.SetActive(false);
         stopAndPlayerPanel.SetActive(false);
     }
     void Update()
@@ -30,6 +35,14 @@ public class UIControl : MonoBehaviour
     {
         stageTxt.text=$"스테이지{GameManager_CH.Instance.stageData.stageNum.ToString()}";
         EndingPanel.SetActive(Active);
+    }
+    public void EndingPanelControl2(bool Active)
+    {
+        Debug.Log(stageTxt.text);
+        Debug.Log(GameManager_CH.Instance.stageData.stageNum.ToString());
+        stageTxt.text = $"스테이지{GameManager_CH.Instance.stageData.stageNum.ToString()}";
+        EndingPanel2.SetActive(Active);
+
     }
     public void StartingPanelControl(bool Active){
         StartingPanel.SetActive(Active);
