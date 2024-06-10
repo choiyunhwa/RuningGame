@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -61,9 +60,7 @@ public class GameManager_CH : MonoBehaviour
     public void Lobby(){
         SceneManager.LoadScene("Lobby");
     }
-    public void GameScene(){
-        SceneManager.LoadScene("GameMainScene _CH");
-    }
+
     //프로그램 종료시 자동 저장
     private void OnApplicationQuit() {
         dataManager.SaveGameData();
