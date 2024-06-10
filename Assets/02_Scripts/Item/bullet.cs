@@ -5,15 +5,15 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
-    private AttackSO attackData;
+  
     public int damage =0;
 
-
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(Destroy());
+        
     }
-    public void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
     {
         if(((1<<other.gameObject.layer) & layerMask) != 0)
         {
@@ -25,14 +25,12 @@ public class bullet : MonoBehaviour
             DestroyBullet();
             }
         }
-        //else if (((1 << other.gameObject.layer) & attackData.terget.value) != 0)
-        //{
-
-        //}
+       
     }
     IEnumerator Destroy()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3.5f);
+      
         DestroyBullet();
     }
 
