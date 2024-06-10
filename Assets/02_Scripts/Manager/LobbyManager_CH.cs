@@ -18,7 +18,8 @@ public class LobbyManager_CH : MonoBehaviour
 
     
     void Start(){
-        for(int i=1; i<stages.Length;i++){
+        Time.timeScale = 1;
+        for (int i=1; i<stages.Length;i++){
             bool check = GameManager_CH.Instance.dataManager.data.stages[i - 1];
             stages[i].GetComponent<Image>().color = check ? trueColor:falseColor;
             stages[i].GetComponent<Button>().enabled = check;
