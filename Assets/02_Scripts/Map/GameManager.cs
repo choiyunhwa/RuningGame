@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float curSpawnDelay;
     public int curEnemyCnt = 0;
 
+
     private void Update() 
     {
         if(!GameManager_CH.Instance.isStart)return;

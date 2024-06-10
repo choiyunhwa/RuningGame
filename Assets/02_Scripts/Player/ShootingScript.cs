@@ -4,7 +4,7 @@ public class ShootingScript : MonoBehaviour
 {
     // �Ѿ� ������
     public GameObject bulletPrefab;
-    public ObjectManager objectManager;
+    private ObjectManager objectManager;
     private AudioSource audioSource;
 
     // �Ѿ� �ӵ�

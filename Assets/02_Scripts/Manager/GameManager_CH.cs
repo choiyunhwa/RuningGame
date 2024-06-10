@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,6 +35,8 @@ public class GameManager_CH : MonoBehaviour
     public int curMonster;
     public int curScore;
     public ObjectManager objectManager;
+
+
     void Start(){
         Time.timeScale =1;
         dataManager.LoadGameData();
@@ -86,4 +89,5 @@ public class GameManager_CH : MonoBehaviour
         if (dataManager.data.level > 4) return;
         dataManager.ExpCondition(monsterLevel);
     }
+
 }

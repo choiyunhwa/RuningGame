@@ -9,11 +9,11 @@ public class FollowPlayer : MonoBehaviour
     public Transform playerTransform;
     private bool isMove = true;
     public float stoppingDistance = 0.4f;
-    private RaycastHit hit;
     private float maxDistance = 1f;
     public float sphereRadius = 0.2f;
     private Rigidbody rigid;
     public LayerMask layer;
+    private RaycastHit hit;
     private void OnEnable()
     {
         rigid = GetComponent<Rigidbody>();
@@ -54,4 +54,6 @@ public class FollowPlayer : MonoBehaviour
         }
 
     }
+
+
 }

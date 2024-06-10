@@ -327,6 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76a35b3c6f3aff4da7b092005c9f28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
   maxHealth: 100
   currentHealth: 100
   healthSlider: {fileID: 25942046}

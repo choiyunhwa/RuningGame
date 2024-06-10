@@ -7,17 +7,17 @@ public class Player : MonoBehaviour
 {
     public List<GameObject> playerList = new List<GameObject>();
     public Transform playerGroup;
+    private HealthBar healthBar;
 
-    private HealthBar healber;
 
     private void Awake()
     {
-        healber = GetComponent<HealthBar>();
+        healthBar = GetComponent<HealthBar>();  
     }
 
     private void Start()
     {
-        healber.OnDamage += FollowPlayerDamage;
+        healthBar.OnDamage += FollowPlayerDamage;
     }
     private void FollowPlayerDamage()
     {
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Follow Player Die");
             playerList.RemoveAt(0);
-            Destroy(playerGroup.GetChild(0));
+            Destroy(playerGroup.GetChild(0).gameObject);
         }
     }
 }
