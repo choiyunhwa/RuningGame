@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    ObjectManager objectManager;
+  
     public AttackSO enemySO;
     public Animator animator;
     public Slider healthSlider;
@@ -28,8 +28,7 @@ public class Enemy : MonoBehaviour
         maxHealth = enemySO.health;
 
 
-        // 슬라이더의 최대 값을 최대 체력으로 설정
-        //   healthSlider.maxValue = enemySO.maxmaxHealth;
+   
     }
 
     private void Update() 
