@@ -19,7 +19,9 @@ public class ShootingScript : MonoBehaviour
     float attackCoolTime=0.2f;
     float timer;
 
-
+    void Start(){
+        objectManager = GameManager_CH.Instance.objectManager;
+    }
     // Update ÇÔ¼ö
     void Update()
     {

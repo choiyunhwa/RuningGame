@@ -33,6 +33,7 @@ public class GameManager_CH : MonoBehaviour
     public StageData stageData;
     public int curMonster;
     public int curScore;
+    public ObjectManager objectManager;
     void Start(){
         Time.timeScale =1;
         dataManager.LoadGameData();

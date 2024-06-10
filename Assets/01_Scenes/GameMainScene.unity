@@ -4269,7 +4269,7 @@ MonoBehaviour:
   remainingMonsterTxt: {fileID: 581082001}
   EndingPanel: {fileID: 1491216100}
   endingBodyTxt: {fileID: 430894992}
-  stageTxt: {fileID: 430894992}
+  stageTxt: {fileID: 623726632}
   StartingPanel: {fileID: 1705498250}
   startingBodyTxt: {fileID: 1986718399}
 --- !u!114 &1354061600
