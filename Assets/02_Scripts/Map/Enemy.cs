@@ -71,6 +71,7 @@ public class Enemy : MonoBehaviour
     {
         if(target.gameObject.CompareTag("Player"))
         {
+            Debug.Log("부딪힘");
             animator.SetTrigger("Attack");
         }
     }
