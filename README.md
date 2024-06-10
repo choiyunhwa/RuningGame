@@ -9,12 +9,10 @@
 4. [주요기능](#주요기능)
 5. [개발기간](#개발기간)
 6. [기술스택](#기술스택)
-7. [서비스 구조](#서비스-구조)
-8. [와이어프레임](#와이어프레임)
-9. [API 명세서](#API-명세서)
-10. [ERD](#ERD)
-11. [프로젝트 파일 구조](#프로젝트-파일-구조)
-12. [Trouble Shooting](#trouble-shooting)
+7. [와이어프레임](#와이어프레임)
+8. [UML](#UML)
+9. [프로젝트 파일 구조](#프로젝트-파일-구조)
+10. [Trouble Shooting](#trouble-shooting)
 # 프로젝트 소개
  - 프로젝트 이름 : RuningGame
  - 개발언어 및 엔진 : C#, 유니티3D 
@@ -49,12 +47,31 @@
 |![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/bca72594-c744-4bfe-9432-a59b58a16295)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/ab527bb2-a85d-45c6-9036-faa7533520ce)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/e53fce63-6924-40f1-83fa-8055a89bc352)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/80297e45-d969-4ffc-bd03-0235beb3ed23)
 |:---:|:---:|:---:|:---:|
 |Unity|C#|VisualStudio|GitHub|
-# 서비스구조
 # 와이어프레임
-# API명세서
-# ERD
+![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/e5982a75-230f-44db-9aa8-244bc3c92ec2)
+# UML
+![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/14952685-0b58-43d6-abc3-1e8187927588)
 # 프로젝트 파일 구조
 ![image](https://github.com/choiyunhwa/RuningGame/assets/125470068/6e4b841b-5ea2-453c-b36d-6fbdf18e4975)
-
-
 # Trouble Shooting
+문경건
+- Problem : 캐릭터를 움직일지, 맵을 움직일 지 선택 고민
+- Cause : 게임 설계 상 두 가지 방법 모두 가능 / 플레이어 경험 최적화 필요 / 구현 복잡성과 성능 고려
+- Solve : 캐릭터 고정으로 충돌 검사와 애니메이션 처리가 단순해져 성능이 향상 되고 좌표 시스템의 일관성으로 효과 추가가 쉬워져 맵을 움직이는 것으로 결정
+
+고도희
+- Problem : 마우스의 방향을 향해 플레이어를 이동 처리하려고 하였으나 플레이어의 이동량이 작아 움직임이 느껴지지 않음
+- Cause : ScreenToWorldPoint 함수를 사용하여 마우스 위치를 받아오는 과정에서 X좌표값의 문제로 원하는 이동 처리가 제대로 구현되지 않음
+- Solve : Ray를 사용하여 ScreenPointToRay 함수를 호출하여 마우스 입력과 함께
+마우스가 가르키는 지점에서 시작하는 레이를 생성한 뒤 마우스의 위치와 플레이어의 위치를 동일하게 만듬
+
+정래규
+- Problem : Json으로 정보를 저장하기 위해 Dictionary 사용하였으나 저장된 Json파일에 정보가 나타나지 않음
+- Cause : 저장 시 직렬화를 해야했으나 Dictionary는 직렬화되지 않음
+- Solve : List를 사용하여 직렬화 문제를 해결
+
+최윤화
+- Problem : 한 곳의 위치에서 플레이어가 생성되었을때 플레이어 간의 충돌로 인해 튕기는 문제 발생
+- Solve : insideUnitSphere을 이용하여 플레이어의 뒤쪽에서 랜덤으로 생성한 뒤
+주변을 검사하여 플레이어에게 근처로 이동 처리
+
