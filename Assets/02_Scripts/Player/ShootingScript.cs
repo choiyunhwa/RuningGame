@@ -25,7 +25,10 @@ public class ShootingScript : MonoBehaviour
          audioSource = gameObject.GetComponent<AudioSource>();    
     }
 
-    // Update �Լ�
+    void Start(){
+        objectManager = GameManager_CH.Instance.objectManager;
+    }
+
     void Update()
     {
         // �÷��̾� �ֺ� �� ����

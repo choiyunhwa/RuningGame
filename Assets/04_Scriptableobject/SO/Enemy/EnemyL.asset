@@ -17,6 +17,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   name: enemyL
-  health: 20
+  health: 5
   speed: 20
   stoppingDistance: 1

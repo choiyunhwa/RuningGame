@@ -16,9 +16,9 @@ public class ObjectManager : MonoBehaviour
 
     GameObject[] targetPool;
 
-
     private void Awake() 
     {
+        GameManager_CH.Instance.objectManager = this;
         uniqueEnemy = new GameObject[1];
         enemyS = new GameObject[100];
         enemyM = new GameObject[100];
@@ -26,7 +26,7 @@ public class ObjectManager : MonoBehaviour
         bullets = new GameObject[1000];
         Generate();
     }
-    
+
     void Generate()
     {
         // Enemy

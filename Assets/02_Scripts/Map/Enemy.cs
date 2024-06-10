@@ -1,14 +1,20 @@
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    ObjectManager objectManager;
+  
     public AttackSO enemySO;
     public Animator animator;
+    public Slider healthSlider;
+    public float curHealth;
+    public float maxHealth;
+
 
     private Transform player;
     Rigidbody rigid;
-
     private void Awake() 
     {
         rigid = GetComponent<Rigidbody>();
@@ -18,6 +24,11 @@ public class Enemy : MonoBehaviour
     private void Start() 
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        curHealth=enemySO.health;
+        maxHealth = enemySO.health;
+
+
+   
     }
 
     private void Update() 
@@ -27,17 +38,18 @@ public class Enemy : MonoBehaviour
 
    public void OnHit(int damage)
     {
-        enemySO.health -= damage;
-
+        curHealth -= damage;
+        healthSlider.value = curHealth/ maxHealth;
         Invoke("ReturnSprite", 0.1f);
 
-        if (enemySO.health <= 0)
+        if (curHealth <= 0)
         {
             Debug.Log("맞았다");
             GameManager_CH.Instance.curMonster--;
             GameManager_CH.Instance.achievementManager_CH.MonsterKilled();
             GameManager_CH.Instance.curScore++;
             gameObject.SetActive(false);
+            
         }
     }
 
@@ -63,5 +75,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    private void OnDisable()
+    {
+        healthSlider.value = enemySO.health;
+        curHealth =maxHealth;
+    }
 }
