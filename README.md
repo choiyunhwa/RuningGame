@@ -46,12 +46,10 @@
 # 개발기간
  개발 기간 : 2024.06.03 ~ 2024.06.11
 # 기술스택
+|:---:|:---:|:---:|
 |Unity|C#|VisualStudio|GitHub|
-![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/bca72594-c744-4bfe-9432-a59b58a16295)![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/2f839d89-d8fc-47a5-9427-f418d6f941f3)![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/e53fce63-6924-40f1-83fa-8055a89bc352)![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/0d56884f-2e85-424e-9793-1fe31305d259)
-
-
-
-
+|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/bca72594-c744-4bfe-9432-a59b58a16295)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/2f839d89-d8fc-47a5-9427-f418d6f941f3)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/e53fce63-6924-40f1-83fa-8055a89bc352)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/0d56884f-2e85-424e-9793-1fe31305d259)
+|:---:|:---:|:---:|
 # 서비스구조
 # 와이어프레임
 # API명세서
