@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
     public float speed = 5f; 
     public Transform playerTransform;
     private bool isMove = true;
-    public float stoppingDistance = 0.4f;
+    public float stoppingDistance = 0.2f;
     private float maxDistance = 1f;
     public float sphereRadius = 0.2f;
     private Rigidbody rigid;
@@ -17,7 +17,7 @@ public class FollowPlayer : MonoBehaviour
     private void OnEnable()
     {
         rigid = GetComponent<Rigidbody>();
-        layer = LayerMask.GetMask("Player");
+        layer = LayerMask.GetMask("Player","CopyPlayer");
     }
 
     private void Update()
