@@ -8447,7 +8447,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1354061598}
         m_TargetAssemblyTypeName: ButtonControl, Assembly-CSharp
         m_MethodName: Lobby
         m_Mode: 1
