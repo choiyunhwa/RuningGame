@@ -4,7 +4,7 @@ public class Enemy : MonoBehaviour
 {
     ObjectManager objectManager;
     public AttackSO enemySO;
-    public Sprite[] sprites;
+    public Animator animator;
 
     private Transform player;
     Rigidbody rigid;
@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private void Awake() 
     {
         rigid = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start() 
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
    public void OnHit(int damage)
     {
         enemySO.health -= damage;
-        //    spriteRenderer.sprite = sprites[1]; // 피격시 애니메이션
+
         Invoke("ReturnSprite", 0.1f);
 
         if (enemySO.health <= 0)
@@ -40,10 +41,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) 
-    {
-       
-    }
     void ChasePlayer()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -54,6 +51,15 @@ public class Enemy : MonoBehaviour
             Vector3 direction = (player.position - transform.position).normalized;
 
             rigid.MovePosition(transform.position + direction * enemySO.speed * Time.deltaTime);
+            animator.SetFloat("MoveSpeed", enemySO.speed);
+        }
+    }
+
+    void OnCollisionEnter(Collision target) 
+    {
+        if(target.gameObject.CompareTag("Player"))
+        {
+            animator.SetTrigger("Attack");
         }
     }
 
