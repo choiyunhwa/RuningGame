@@ -54,4 +54,7 @@
 # API명세서
 # ERD
 # 프로젝트 파일 구조
+![image](https://github.com/choiyunhwa/RuningGame/assets/125470068/6e4b841b-5ea2-453c-b36d-6fbdf18e4975)
+
+
 # Trouble Shooting
