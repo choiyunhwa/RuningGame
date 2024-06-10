@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,58 +10,53 @@ public class AchievementManager_CH : MonoBehaviour
     //얘도 사실상 컨트롤러네
     //Dictionary는 직렬화가 안되요~
     public List<AchievementData> AchievementList;
-    public List<AchievementData> AchievementClearList;
     [Header("ClearPanel")]
     public GameObject clearPanel;
     Animator animator;
     public TextMeshProUGUI text;
+    List<int> monsterMaxCount = new List<int>();
+    List<int> weaponMaxCount = new List<int>();
     void Awake(){
         AchievementList = new List<AchievementData>();
-        AchievementClearList = new List<AchievementData>();
     }
 
     void Start()
     {
+        
         animator = clearPanel.GetComponent<Animator>();
         GameManager_CH.Instance.achievementManager_CH = this;
     }
 
     public void GenerateData(){
-        AchievementList.Add(new AchievementData("몬스터를 사냥하자","몬스터를 사냥해주세요",new int[]{100,200,300},Type.MONSTER));
-        AchievementList.Add(new AchievementData("무기를 수집","다양한 무기를 수집해 보세요",new int[]{5},Type.WEAPON));
+        monsterMaxCount.Add(100);
+        weaponMaxCount.Add(5);
+        AchievementList.Add(new AchievementData("몬스터를 사냥하자","몬스터를 사냥해주세요", monsterMaxCount, Type.MONSTER));
+        AchievementList.Add(new AchievementData("무기를 수집","다양한 무기를 수집해 보세요", weaponMaxCount, Type.WEAPON));
     }
 
     
     //음 스테이지 끝날때마다 체크를 해볼까?
     public void CheckClear(){
-        foreach(AchievementData achievement in AchievementList){
+        if(AchievementList.Count==0)return;
+        //foreach문에서 리스트를 추가하거나 빼면 안된다.
+        foreach (AchievementData achievement in AchievementList){
             //ex 잡은 몬스터가 기준치보다 높을 때 
             if (achievement.curCount >= achievement.maxCount[achievement.level])
             {
+                achievement.maxCount.Add(achievement.maxCount[achievement.level]*2);
                 achievement.level++;
                 //단계별 업적을 전부 클리어시
-                if (achievement.level >= achievement.maxCount.Length)
-                {
-                    AchievementClearList.Add(achievement);
-                    AchievementList.Remove(achievement);
-                }
                 ClearMessage(achievement);
             }
         }
+
+        
     }
 
     void ClearMessage(AchievementData data)
     {
         text.text = $"업적 : {data.name}클리어!";
-        clearPanel.SetActive(true);
-        animator.SetBool("On",true);
-        StartCoroutine(ClearMessageClose());
-    }
-    IEnumerator ClearMessageClose(){
-        yield return new WaitForSeconds(2);
-        animator.SetBool("On", false);
-        yield return new WaitForSeconds(0.5f);
-        clearPanel.SetActive(false);
+        animator.SetTrigger("On");
     }
     public void SaveAchievementManager()
     {
