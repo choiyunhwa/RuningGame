@@ -49,12 +49,11 @@
 |![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/bca72594-c744-4bfe-9432-a59b58a16295)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/ab527bb2-a85d-45c6-9036-faa7533520ce)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/e53fce63-6924-40f1-83fa-8055a89bc352)|![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/80297e45-d969-4ffc-bd03-0235beb3ed23)
 |:---:|:---:|:---:|:---:|
 |Unity|C#|VisualStudio|GitHub|
-# 서비스구조
 # 와이어프레임
-# API명세서
-# ERD
+![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/e5982a75-230f-44db-9aa8-244bc3c92ec2)
+# UML
+![image](https://github.com/choiyunhwa/RuningGame/assets/82863756/14952685-0b58-43d6-abc3-1e8187927588)
 # 프로젝트 파일 구조
 ![image](https://github.com/choiyunhwa/RuningGame/assets/125470068/6e4b841b-5ea2-453c-b36d-6fbdf18e4975)
-
-
 # Trouble Shooting
+
