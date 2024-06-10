@@ -62,6 +62,7 @@ public class Fence : Item
                 GameObject ob = Instantiate(obj, pos,Quaternion.identity);
                 pl.playerList.Add(ob);
                 ob.transform.SetParent(pl.playerGroup);
+
                 FollowPlayer follow = ob.AddComponent<FollowPlayer>();
                 follow.playerTransform = pl.transform;
             }

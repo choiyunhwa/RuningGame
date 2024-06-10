@@ -16,4 +16,4 @@ MonoBehaviour:
   monsterCount: 90
   obstacle:
   - {fileID: 4855986511635639068, guid: 9b8e4e7b78fe5de4a8b4c1149e79d297, type: 3}
-  - {fileID: 7859273627721922765, guid: 25b326a8d686e644fa69bdf423247951, type: 3}
+  - {fileID: 4023231024230435292, guid: 05a6fd02b8ff9a348ac2d6c3ad7cf7a1, type: 3}
